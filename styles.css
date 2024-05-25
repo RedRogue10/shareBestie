@@ -1,0 +1,65 @@
+header {
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px; 
+    background-color: #510400;
+    color: white;
+}
+
+.logo img {
+    height: 50px; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px; 
+}
+nav ul li a {
+    font-size: 25px;
+    text-decoration: none;
+    color: white; 
+/* color of Home and others */
+}
+
+nav ul li a:hover {
+    color: pink; /* hover over Home and others */
+}
+
+.user-auth a {
+    margin-right: 10px; /* For login/signup */
+}
+
+.user-auth form{
+  display: inline-block;
+}
+
+.user-auth a:hover {
+    color: #555; /* For login/signup*/
+} 
+
+
+/* Set the height of each section to 100vh */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Add background colors to sections for differentiation */
+.section1 { background-color: #FFAF91; }
+.section2 { background-color: #FF9377; }
+.section3 { background-color: #FB785E; }
+/*.footer { background-color: #DC5D46; }*/
+
