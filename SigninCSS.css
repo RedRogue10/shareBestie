@@ -1,4 +1,4 @@
-
+/*Login/Sign Up Form*/
 #tableHeader{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
@@ -54,6 +54,7 @@
     margin-bottom: 1%;
 }
 
+/*Navigation Bar Section*/
 .navbar-header ul{
     background-color: #8C2F39;
     list-style-type: none;
