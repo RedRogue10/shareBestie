@@ -1,0 +1,91 @@
+
+#tableHeader{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin-inline: 0%;
+    margin-bottom: 0%;
+    background-color: #8C2F39;
+    text-align: center;
+    border-radius: 20px;
+    padding-block: 2.5%;
+}
+
+.signupform table{
+    width: 100%;
+}
+
+.signupform{
+    font-size: larger;
+    text-align: center;
+    background-color: antiquewhite;
+    margin-top: 0%;
+    margin-inline: 15%;
+    padding-top: 0%;
+    padding-inline: 0%;
+    border-radius: 20px;
+}
+
+.signupform input{
+    margin-top: 0%;
+    padding-inline: 10px;
+    border-radius: 10px;
+    border: 0px;
+    width: 70%;
+    padding: 10px;
+}
+
+.signupform tr,td{
+    padding: 1.5%;
+}
+
+/* BUTTON */
+#signup{
+    font-size: larger;
+    background-color: #8C2F39;
+    border: #8C2F39;
+}
+
+#signup:hover{
+    background-color: #b23848;
+}
+
+#gen-info{
+    color: gray;
+    margin-bottom: 1%;
+}
+
+.navbar-header ul{
+    background-color: #8C2F39;
+    list-style-type: none;
+    margin-bottom: 5%;
+    overflow: hidden;
+    padding: 20px;
+}
+  
+.navbar-header li {
+    float: right;
+}
+  
+.navbar-header li a {
+    display: block;
+    color: antiquewhite;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    border: antiquewhite;
+    border-radius: 20px;
+    margin-inline: 20px;
+}
+
+.navbar-header li a:hover {
+    background-color: #b23848;
+}
+
+#brandname{
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: xx-large;
+    margin: 0%;
+    padding: 0%;
+}
