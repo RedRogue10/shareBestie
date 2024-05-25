@@ -1,65 +1,112 @@
+
+/* CSS styles */
+
+/* Header Section */
 header {
     position: fixed;
     box-sizing: border-box;
     width: 100%;
+    background-color: #8C2F39;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px; 
-    background-color: #510400;
-    color: white;
 }
 
 .logo img {
-    height: 50px; 
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
 nav ul li {
-    margin-right: 20px; 
+    margin-right: 20px;
 }
+
 nav ul li a {
-    font-size: 25px;
+    color: antiquewhite;
     text-decoration: none;
-    color: white; 
-/* color of Home and others */
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: pink; /* hover over Home and others */
+    background-color: #b23848;
 }
 
-.user-auth a {
-    margin-right: 10px; /* For login/signup */
+.user-auth form {
+    display:inline-block;
+    margin-left: 10px;
 }
 
-.user-auth form{
-  display: inline-block;
+
+/* Welcome Section */
+.section1 {
+    height: 100vh; /* Adjusted height to fill the viewport */
+    padding-top: 100px; /* Add padding top to compensate for the fixed header */
+    background-color: antiquewhite;
+    text-align: center;
+    background-color: #FFAF91;
 }
 
-.user-auth a:hover {
-    color: #555; /* For login/signup*/
-} 
-
-
-/* Set the height of each section to 100vh */
-.section {
+/* Top Class Notes Section */
+.section2 {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #FF9377;
+}
+
+/* Top Tutors Section */
+.section3 {
+    height: 100vh;
+    background-color: #dcdcdc;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #FB785E;
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #8C2F39;
+    color: antiquewhite;
+    padding: 20px;
     text-align: center;
 }
 
-/* Add background colors to sections for differentiation */
-.section1 { background-color: #FFAF91; }
-.section2 { background-color: #FF9377; }
-.section3 { background-color: #FB785E; }
-/*.footer { background-color: #DC5D46; }*/
+.contact-info a {
+    color: antiquewhite;
+    text-decoration: none;
+}
 
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+#brandname{
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: xx-large;
+    margin: 0%;
+    padding: 0%;
+}
