@@ -8,7 +8,7 @@
     $email = $_POST['email'];
     if(isset($_POST['Login'])){
         $getUsers = "SELECT Email FROM user";
-        $users  =  $conn->query($getUsers)->fetch_assoc();
+        $users  =  array_values($conn->query($getUsers)->fetch_assoc());
         if(!$users){
             $msg = "Email not used. Register here.";
         }else if (in_array($email, $users)) {
