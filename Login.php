@@ -14,11 +14,11 @@
         }else if (in_array($email, $users)) {
           $getPass = "SELECT * FROM user WHERE Email = '$email' ";
           $pass = $conn->query($getPass)->fetch_assoc();    
-          if ($pass['password']==$_POST['password']) {
+          if ($pass['Password']==$_POST['password']) {
              $_SESSION['valid'] = true;
              $_SESSION['timeout'] = time();
              $_SESSION['userID'] = $pass['UserID'];
-             $msg = "You have entered correct username and password";
+             header("Location: index.html");
              
           } else { 
              $msg = "You have entered wrong Password"; 
@@ -28,7 +28,7 @@
        }
        
     }
-    
+    echo $msg;
 
 ?>
 <!DOCTYPE html>
@@ -81,6 +81,7 @@
                     </td>
                 </tr>
             </table>
+            <?php echo $msg;?>
         </form>
         </div>
     
