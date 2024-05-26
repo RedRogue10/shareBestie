@@ -24,7 +24,7 @@
     <section>
         <div class="signupform">
         <h1 id="tableHeader">Create your account</h1>
-            <form action="">
+            <form action="tutors.php" method="post">
                 <table>
                     <tr>
                         <p id="gen-info">General Information</p>
@@ -36,7 +36,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" name="fullname" placeholder="Full Name">
+                            <input type="text" name="firstname" placeholder="First Name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="lastname" placeholder="Last Name">
                         </td>
                     </tr>
                     <tr>

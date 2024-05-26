@@ -18,6 +18,7 @@
              $_SESSION['valid'] = true;
              $_SESSION['timeout'] = time();
              $_SESSION['userID'] = $pass['UserID'];
+             $_SESSION['username'] = $pass['Username'];
              header("Location: index.html");
              
           } else { 
@@ -77,7 +78,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in">
+                    <button class="btn btn-primary" id="signup" type="submit" name="Login">Sign Up</button>
+                        <!-- <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in"> -->
                     </td>
                 </tr>
             </table>
