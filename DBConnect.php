@@ -12,9 +12,9 @@ $sql = "IF NOT EXISTS(SELECT name FROM sys.databases WHERE name = 'database_name
 $conn = new mysqli($servername,$username,$password);
 
 if($conn->query($sql)==TRUE){
-    include tables.php;
+    include 'tables.php';
+    $conn->close();
     echo "Database Created";
 }else{
     $conn = new mysqli($servername, $username, $password, $dbname);
-
 }
