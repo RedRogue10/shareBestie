@@ -4,17 +4,14 @@ $username = "root";
 $password = "";
 $dbname = "shareBestie";
 
-$sql = "IF NOT EXISTS(SELECT name FROM sys.databases WHERE name = 'database_name')
-        BEGIN
-            CREATE DATABASE $dbname;
-        END";
 
-$conn = new mysqli($servername,$username,$password);
+// $conn = new mysqli($servername,$username,$password);
+// $sql = "CREATE DATABASE $dbname";
 
-if($conn->query($sql)==TRUE){
-    include 'tables.php';
-    $conn->close();
-    echo "Database Created";
-}else{
-    $conn = new mysqli($servername, $username, $password, $dbname);
-}
+// if($conn->query($sql) === TRUE){
+//     echo "Database created successfully";
+//     $conn->close();
+//     include 'tables.php';
+//     echo "Tables Created";
+// } else{
+$conn = new mysqli($servername, $username, $password, $dbname);
