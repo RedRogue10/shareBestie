@@ -10,7 +10,7 @@
 <body>
     <div class="navbar-header">
         <ul>
-            <img src="ShareBestie_Logo.png" alt="LOGO" style="margin-left:5%; padding:0%; height:50px; width:50px; object-fit:cover;">
+            <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
             <a href="index.html" id="brandname">ShareBestie</a>
             <li><a href="">Careers</a></li>
             <li><a href="">Courses</a></li>

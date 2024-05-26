@@ -18,11 +18,12 @@
     font-size: larger;
     text-align: center;
     background-color: antiquewhite;
-    margin-top: 0%;
+    margin-top: 10%;
     margin-inline: 15%;
     padding-top: 0%;
     padding-inline: 0%;
     border-radius: 20px;
+
 }
 
 .signupform input{
@@ -58,9 +59,12 @@
 .navbar-header ul{
     background-color: #8C2F39;
     list-style-type: none;
-    margin-bottom: 5%;
+    margin: 0%;
     overflow: hidden;
     padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0%;
 }
   
 .navbar-header li {
@@ -91,3 +95,34 @@
     margin: 0%;
     padding: 0%;
 }
+
+/* Tutors Page */
+
+.search_section{
+    text-align: center;
+    margin-top: 130px;
+}
+
+.search_section button{
+    color: antiquewhite;
+    background-color: #8C2F39;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.search_section button:hover{
+    background-color: #b23848;
+}
+
+.search_section input{
+    background-color: antiquewhite;
+    border-style: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0.3%;
+    width: 40%;
+}
+
+
+

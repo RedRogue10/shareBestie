@@ -40,11 +40,28 @@ nav ul li a:hover {
     background-color: #b23848;
 }
 
+
+.user-auth button{
+    background-color: antiquewhite;
+    color: #8C2F39;
+    border-color: antiquewhite
+}
+
+.user-auth button:active{
+    background-color: #8C2F39;
+    border: #8C2F39;
+    transform: translateY(4px);
+}
+
+.user-auth button:hover{
+    background-color: #FFAF91;
+    border: antiquewhite;
+}
+
 .user-auth form {
     display:inline-block;
     margin-left: 10px;
 }
-
 
 /* Welcome Section */
 .section1 {
