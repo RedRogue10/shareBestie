@@ -1,3 +1,36 @@
+<?php
+   ob_start();
+   session_start();
+?>
+<?php
+    include 'DBConnect.php';
+    $msg="start";
+    $email = $_POST['email'];
+    if(isset($_POST['Login'])){
+        $getUsers = "SELECT Email FROM user";
+        $users  =  $conn->query($getUsers)->fetch_assoc();
+        if(!$users){
+            $msg = "Email not used. Register here.";
+        }else if (in_array($email, $users)) {
+          $getPass = "SELECT * FROM user WHERE Email = '$email' ";
+          $pass = $conn->query($getPass)->fetch_assoc();    
+          if ($pass['Password']==$_POST['password']) {
+             $_SESSION['valid'] = true;
+             $_SESSION['timeout'] = time();
+             $_SESSION['userID'] = $pass['UserID'];
+             header("Location: index.html");
+             
+          } else { 
+             $msg = "You have entered wrong Password"; 
+          }
+       }else {
+          $msg = "You have entered wrong user name";
+       }
+       
+    }
+    echo $msg;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +56,14 @@
 
     <div class="signupform">
     <h1 id="tableHeader">Welcome Back!</h1>
-        <form action="">
+        <form action='<?php $_SERVER['PHP_SELF']?>' method ="POST">
             <table>
                 <tr>
                     <p id="gen-info">Account Login</p>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="email" name="email" placeholder="Email">
                     </td>
                 </tr>
                 <tr>
@@ -44,12 +77,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <button class="btn btn-primary" id="signup" type="submit">Log in</button>
+                        <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in">
                     </td>
                 </tr>
             </table>
+            <?php echo $msg;?>
         </form>
-    </div>
+        </div>
     
 </body>
 </html>
+
+
