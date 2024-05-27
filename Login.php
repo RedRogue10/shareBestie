@@ -4,7 +4,11 @@
 ?>
 <?php
     include 'DBConnect.php';
-    $msg="start";
+    if(isset($_REQUEST['loginMessage'])){
+        $msg=$_REQUEST['loginMessage'];
+    }else{
+        $msg="Enter your credentials";
+    }
     $email = $_POST['email'];
     if(isset($_POST['Login'])){
         $getUsers = "SELECT Email FROM user";
@@ -82,8 +86,13 @@
                         <!-- <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in"> -->
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <?php echo "<span>$msg</span>";?>
+                    </td>
+                </tr>
             </table>
-            <?php echo $msg;?>
+            
         </form>
         </div>
     
