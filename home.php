@@ -25,7 +25,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/notes">Courses</a></li>
+                <li><a href="CourseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
                <!--  <li><a href="/login">Login</a></li>
