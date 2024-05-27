@@ -2,15 +2,15 @@
 <?php 
     session_start();
     include 'dbConnect.php';
-    $courseID = $_GET['id'];
+    $postID = $_GET['postID'];
 
-    // Query course information
-    $sql = "SELECT * FROM course WHERE CourseId = '$courseID'";
-    $courseRow = $conn->query($sql)->fetch_assoc();
+    // Query post information
+    $sql = "SELECT * FROM post WHERE postID = '$postID'";
+    $postRow = $conn->query($sql)->fetch_assoc();
     
-    // Query Posts Under Course
-    $sql = "SELECT * FROM postUnder NATURAL JOIN post WHERE CourseID = '$courseID'";
-    $postsUnder = $conn->query($sql);
+    // Query comments under post
+    $sql = "SELECT * FROM commentUnder NATURAL JOIN comment WHERE PostID = '$postID'";
+    $commentsUnder = $conn->query($sql);
 
 ?>
 
@@ -66,18 +66,15 @@
 
     <!-- Main Body -->
     <section id="section1" class="section section1">
-        <h2><?php echo $courseRow['CourseID']?></h2>
-        <p><?php echo $courseRow['Description']?></p>
-        <?php
-            echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
-        ?>
+        <h2><?php echo $postRow['Title']?></h2>
+        <p><?php echo $postRow['Content']?></p>
+        <form name="commenting" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
                 <?php
-                    if ($postsUnder->num_rows > 0){
-                        while($row = $postsUnder->fetch_assoc()){
-                            echo "<a href=postPage.php?postID=".$row['PostID']."><div id='post' class=''>".
+                    if ($commentsUnder->num_rows > 0){
+                        while($row = $commentsUnder->fetch_assoc()){
+                            echo "<a href=''><div id='post' class=''>".
                                 "<h3>".$row['Title']."</h3>".
                                 "<p>".$row['Content']."</p>".
-                                "<p>".$row['PostDate']."</p>".
                             "</div></a>";
                         }}
         
