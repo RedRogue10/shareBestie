@@ -82,7 +82,7 @@ $(document).ready(function(){
         ?>
     </header>
         <section id ="section1 "class="section section1" >
-            <div id="searchDIV">
+            <div class="search_section">
                 <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                     <input type="text" size="30" id="searchBox" name="search">
                     <input type="submit" value="Search" name='button'>
@@ -90,27 +90,25 @@ $(document).ready(function(){
                 </form>
             </div>
             <div id="searchCards">
-            <?php
-    include 'dbConnect.php';
-    $req = '';
-    if(isset($_REQUEST['button'])){
-    $req = $_REQUEST['button'];}
+                <?php
+                    include 'dbConnect.php';
+                    $req = '';
+                    if(isset($_REQUEST['button'])){
+                        $req = $_REQUEST['button'];}
 
-    switch($req){
-        case 'Search':
-            $name = $_POST['search'];
-            $sql = "SELECT * FROM Course WHERE CourseID LIKE '%$name%'";
-            $result = $conn->query($sql);
+                    switch($req){
+                        case 'Search':
+                            $name = $_POST['search'];
+                            $sql = "SELECT * FROM Course WHERE CourseID LIKE '%$name%'";
+                            $result = $conn->query($sql);
 
-            while($course = $result->fetch_assoc()){
-                
-                echo    "<div>".
-                        "<a href='coursePage.php?id=".$course["CourseID"]."'><p>".$course["CourseID"]." ".$course["Description"]."</p></a>".
-                        "<br></div>";
+                            while($course = $result->fetch_assoc()){
+                            echo    "<div>".
+                                    "<a href='coursePage.php?id=".$course["CourseID"]."'><p>".$course["CourseID"]." ".$course["Description"]."</p></a>".
+                                    "<br></div>";
+                            }
 
-            }
-
-    }
+                    }   
 
 
 ?>
