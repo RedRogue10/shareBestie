@@ -17,7 +17,7 @@ $(document).ready(function(){
         } else {
             $.ajax({
                 type: "POST", 
-                url:"getSearchResults.php", 
+                url:"courseSearchResults.php", 
                 data: {
                     search: name
                 },
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 <html>
     <body>
-        <form name="searchBar" method="post" action="CourseSearch.php">
+        <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
             <input type="text" size="30" id="searchBox" name="search">
             <input type="submit" value="Search" name='button'>
             <div id="searchResults">Hello</div>
@@ -46,7 +46,7 @@ $(document).ready(function(){
 </html>
 
 <?php
-    include 'DBConnect.php';
+    include 'dbConnect.php';
     $req = '';
     if(isset($_REQUEST['button'])){
     $req = $_REQUEST['button'];}
