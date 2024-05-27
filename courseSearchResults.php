@@ -1,5 +1,5 @@
 <?php
-include "DBConnect.php";
+include "dbConnect.php";
 
 if (isset($_POST['search'])){
     $name = $_POST['search'];

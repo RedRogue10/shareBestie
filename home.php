@@ -24,8 +24,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="CourseSearch.php">Courses</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
                <!--  <li><a href="/login">Login</a></li>
@@ -38,16 +38,16 @@
                         <!--Login Form -->
                         <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
-                        <!--Signup Form -->
-                        <a href="logout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
+                        <!--Logout -->
+                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
                 echo '<div class="user-auth">
                         <!--Login Form -->
-                        <a href="Login.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
+                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
       
                         <!--Signup Form -->
-                        <a href="SignUp.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
+                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
         

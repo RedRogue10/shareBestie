@@ -1,5 +1,5 @@
 <?php
-    include 'DBconnect.php';
+    include 'dbConnect.php';
 
     $sql = "CREATE TABLE course(
         CourseID VARCHAR(10),

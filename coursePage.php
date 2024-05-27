@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
     session_start();
-    include 'DBConnect.php';
+    include 'dbConnect.php';
     $courseID = $_GET['id'];
 
     // Query course information
@@ -33,12 +33,12 @@
     <header>
         <div class="logo">
             <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="" id="brandname">ShareBestie</a>
+            <a href="home.php" id="brandname">ShareBestie</a>
         </div>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/notes">Courses</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
             </ul>
@@ -50,15 +50,15 @@
                         <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
                         <!--Signup Form -->
-                        <a href="logout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
+                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
                 echo '<div class="user-auth">
                         <!--Login Form -->
-                        <a href="Login.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
+                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
       
                         <!--Signup Form -->
-                        <a href="SignUp.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
+                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
         ?>
@@ -69,12 +69,12 @@
         <h2><?php echo $courseRow['CourseID']?></h2>
         <p><?php echo $courseRow['Description']?></p>
         <?php
-            echo '<a href="addPost.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
+            echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
         ?>
                 <?php
                     if ($postsUnder->num_rows > 0){
                         while($row = $postsUnder->fetch_assoc()){
-                            echo "<a><div id='post' class='section section2'>".
+                            echo "<a href=''><div id='post' class=''>".
                                 "<h3>".$row['Title']."</h3>".
                                 "<p>".$row['Content']."</p>".
                             "</div></a>";
