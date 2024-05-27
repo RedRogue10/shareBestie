@@ -78,20 +78,12 @@
     $conn->query($sql);
     $sql = "CREATE TABLE commentUnder(
         CommentID INT,
-        PostsID INT,
+        PostID INT,
         FOREIGN KEY (CommentID) REFERENCES comment(CommentID),
         FOREIGN KEY (PostID) REFERENCES post(PostID),
         PRIMARY KEY (CommentID, PostID)
     )";
 
-    $conn->query($sql);
-    $sql = "CREATE TABLE replies(
-        CommentID INT,
-        ReplyID INT,
-        FOREIGN KEY (CommentID) REFERENCES comment(CommentID),
-        FOREIGN KEY (ReplyID) REFERENCES comment(CommentID),
-        PRIMARY KEY (CommentID, ReplyID)
-    )";
     $conn->query($sql);
 
     $sql = "CREATE TABLE comments(
