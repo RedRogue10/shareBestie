@@ -17,7 +17,7 @@
         $getUsers = "SELECT Email FROM user WHERE Email = '$email'";
         $users  = "";  
         if(!($users = $conn->query($getUsers)->fetch_assoc())){
-            $msg = "Email not used. Register here.";
+            $msg = "Email not used. <a href='userSignup.php'>Register here.</a>";
         }else if (in_array($email, $users)) {
           $getPass = "SELECT * FROM user WHERE Email = '$email' ";
           $pass = $conn->query($getPass)->fetch_assoc();    
@@ -56,10 +56,10 @@
     <div class="navbar-header">
         <ul>
             <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
-            <a href="index.html" id="brandname">ShareBestie</a>
+            <a href="home.php" id="brandname">ShareBestie</a>
             <li><a href="">Careers</a></li>
-            <li><a href="">Courses</a></li>
-            <li><a href="">Tutors</a></li>
+            <li><a href="courseSearch.php">Courses</a></li>
+            <li><a href="tutors.php">Tutors</a></li>
         </ul>
     </div>
 

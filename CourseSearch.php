@@ -107,11 +107,9 @@ $(document).ready(function(){
                                     "<a href='coursePage.php?id=".$course["CourseID"]."'><p>".$course["CourseID"]." ".$course["Description"]."</p></a>".
                                     "<br></div>";
                             }
-
                     }   
 
-
-?>
+                ?>
             </div>
         </section>
         <!-- Footer Section -->
