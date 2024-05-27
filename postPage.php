@@ -2,8 +2,9 @@
 <?php 
     session_start();
     include 'dbConnect.php';
-    $postID = $_GET['postID'];
-
+    if(isset($_GET['postID'])){
+        $postID = $_GET['postID'];
+    }
     // Query post information
     $sql = "SELECT * FROM post WHERE postID = '$postID'";
     $postRow = $conn->query($sql)->fetch_assoc();
@@ -68,17 +69,29 @@
     <section id="section1" class="section section1">
         <h2><?php echo $postRow['Title']?></h2>
         <p><?php echo $postRow['Content']?></p>
-        <form name="commenting" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
+        <form name="commenting" method="POST" action="commentAdd.php    ">
+            <textarea style="resize:none;height:200px;width:700px" name="content"   ></textarea>
+            <button class="btn btn-primary" type="submit" name="comment">Comment</button>
+            <input type="hidden" value=<?php echo $postRow['PostID']?> name="PostID">
+        </form>
+        <!-- Comment Section -->
+        <div>
                 <?php
                     if ($commentsUnder->num_rows > 0){
                         while($row = $commentsUnder->fetch_assoc()){
-                            echo "<a href=''><div id='post' class=''>".
-                                "<h3>".$row['Title']."</h3>".
-                                "<p>".$row['Content']."</p>".
-                            "</div></a>";
-                        }}
+                            $commentID = $row['CommentID'];
+                            $sql = "SELECT * FROM comments NATURAL JOIN user WHERE CommentID = '$commentID' ";
+                            $name = $conn->query($sql)->fetch_assoc();
+
+                            echo "<div id='post' class='comment'>".
+                                "<p>".$row['Content']."<p>".
+                                "<p>".$name['Username']." ".$row['PostDate']."</p>".
+                            "</div>";
+                        }
+                    }
         
-        ?>
+                ?>
+        </div>
     </section>
 
     <!-- Footer Section -->
