@@ -12,6 +12,7 @@
 
 .signupform table{
     width: 100%;
+    text-align: center;
 }
 
 .signupform{
@@ -27,6 +28,7 @@
 }
 
 .signupform input{
+    text-align: center;
     margin-top: 0%;
     padding-inline: 10px;
     border-radius: 10px;
