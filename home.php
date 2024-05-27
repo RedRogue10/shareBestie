@@ -55,11 +55,17 @@
         ?>
     </header>
 
-    <!--Welcome Section -->
+   <!-- Welcome Section -->
     <section id="section1" class="section section1">
-        <h2>Welcome to shareBestie!</h2><br>
-        <p>Insert introduction here</p>
+        <div class="welcome-content">
+            <h1>Welcome to <br><strong>shareBestie!</strong></h1>
+            <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
+        </div>
+        <div class="introduction">
+            <p> At shareBestie, we believe that every student deserves access to quality educational resources to excel in their academic journey. That's why we've created a community where students can come together to share class notes and insights on various subjects. Whether you're looking for notes from your recent lecture or eager to contribute your own knowledge, shareBestie provides the perfect platform to connect with peers and enhance your learning experience. With a diverse range of courses and topics covered, you'll find everything you need. Our user-friendly interface makes it easy to browse, upload, and view notes, ensuring that valuable learning resources are accessible to all. Join us today and become part of a supportive community of students who are passionate about learning and helping each other succeed. Together, let's make learning a collaborative and enjoyable experience!</p>
+        </div>
     </section>
+
 
     <!-- Top Class Notes Section -->
     <section id="section2" class="section section2">
@@ -75,9 +81,11 @@
 
     <!-- Footer Section -->
     <footer>
+        <!-- Contact Information -->
         <div class="contact-info">
             <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
         </div>
+        <!-- Footer Links -->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -89,3 +97,4 @@
 
 </body>
 </html>
+
