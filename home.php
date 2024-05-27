@@ -20,7 +20,7 @@
     <header>
         <div class="logo">
             <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="" id="brandname">ShareBestie</a>
+            <a href="home.php" id="brandname">ShareBestie</a>
         </div>
         <nav>
             <ul>

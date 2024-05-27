@@ -2,7 +2,7 @@
    ob_start();
    session_start();
    if(isset($_SESSION['userID'])){
-    header("Location: home.php");
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
    }
 ?>
 <?php

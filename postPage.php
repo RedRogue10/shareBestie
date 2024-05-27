@@ -79,7 +79,7 @@
                         }}
         
         ?>
-        </section>
+    </section>
 
     <!-- Footer Section -->
     <footer>

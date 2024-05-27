@@ -1,6 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>share</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - shareBestie</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
+
+
 </head>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>
@@ -35,17 +44,53 @@ $(document).ready(function(){
 
 <html>
     <body>
-        <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-            <input type="text" size="30" id="searchBox" name="search">
-            <input type="submit" value="Search" name='button'>
-            <div id="searchResults">Hello</div>
-        </form>
-        <div id="searchCards">
+    <header>
+        <div class="logo">
+            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
+            <a href="home.php" id="brandname">ShareBestie</a>
         </div>
-    </body>
-</html>
-
-<?php
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="courseSearch.php">Courses</a></li>
+                <li><a href="tutors.php">Tutors</a></li>
+                <li><a href="/about">About Us</a></li>
+               <!--  <li><a href="/login">Login</a></li>
+                <li><a href="signup">Sign up</a></li> -->
+            </ul>
+        </nav>
+        <?php 
+            if(isset($_SESSION['userID'])){
+                echo '<div class="user-auth">
+                        <!--Login Form -->
+                        <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+      
+                        <!--Logout -->
+                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
+                    </div>';
+            }else{
+                echo '<div class="user-auth">
+                        <!--Login Form -->
+                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
+      
+                        <!--Signup Form -->
+                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
+              </div>';
+            }
+        
+        
+        ?>
+    </header>
+        <section id ="section1 "class="section section1" >
+            <div id="searchDIV">
+                <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+                    <input type="text" size="30" id="searchBox" name="search">
+                    <input type="submit" value="Search" name='button'>
+                    <div id="searchResults"></div>
+                </form>
+            </div>
+            <div id="searchCards">
+            <?php
     include 'dbConnect.php';
     $req = '';
     if(isset($_REQUEST['button'])){
@@ -69,3 +114,21 @@ $(document).ready(function(){
 
 
 ?>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <footer>
+            <div class="contact-info">
+            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="/terms">Terms of Service</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
+
