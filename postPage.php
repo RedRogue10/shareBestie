@@ -1,6 +1,19 @@
+<!DOCTYPE html>
 <?php 
     session_start();
+    include 'dbConnect.php';
+    $postID = $_GET['postID'];
+
+    // Query post information
+    $sql = "SELECT * FROM post WHERE postID = '$postID'";
+    $postRow = $conn->query($sql)->fetch_assoc();
+    
+    // Query comments under post
+    $sql = "SELECT * FROM commentUnder NATURAL JOIN comment WHERE PostID = '$postID'";
+    $commentsUnder = $conn->query($sql);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +41,6 @@
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
-               <!--  <li><a href="/login">Login</a></li>
-                <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
         <?php 
@@ -38,7 +49,7 @@
                         <!--Login Form -->
                         <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
-                        <!--Logout -->
+                        <!--Signup Form -->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
@@ -50,27 +61,24 @@
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
-        
-        
         ?>
     </header>
 
-    <!--Welcome Section -->
+    <!-- Main Body -->
     <section id="section1" class="section section1">
-        <h2>Welcome to shareBestie!</h2><br>
-        <p>Insert introduction here</p>
-    </section>
-
-    <!-- Top Class Notes Section -->
-    <section id="section2" class="section section2">
-        <h2>Top Class Notes/Courses</h2>
-        <p>Insert top class notes here.</p>
-    </section>
-
-    <!-- Top Tutors Section -->
-    <section id="section3" class="section section3">
-        <h2>Top Tutors</h2>
-        <p>Insert top tutors here</p>
+        <h2><?php echo $postRow['Title']?></h2>
+        <p><?php echo $postRow['Content']?></p>
+        <form name="commenting" method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
+                <?php
+                    if ($commentsUnder->num_rows > 0){
+                        while($row = $commentsUnder->fetch_assoc()){
+                            echo "<a href=''><div id='post' class=''>".
+                                "<h3>".$row['Title']."</h3>".
+                                "<p>".$row['Content']."</p>".
+                            "</div></a>";
+                        }}
+        
+        ?>
     </section>
 
     <!-- Footer Section -->
