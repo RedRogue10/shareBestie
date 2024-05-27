@@ -86,7 +86,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <button class="btn btn-primary" id="signup" type="submit" name="Login">Sign Up</button>
+                    <button class="btn btn-primary" id="signup" type="submit" name="Login">Log in</button>
                         <!-- <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in"> -->
                     </td>
                 </tr>
