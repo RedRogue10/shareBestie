@@ -1,5 +1,13 @@
 <?php
     include 'DBConnect.php';
+    session_start();
+    if(isset($_SESSION['userID'])){
+        header("Location: index.html");
+    }
+    
+    
+    
+    
     $userMsg = '';
     $emailMsg = '';
     if(isset($_REQUEST['signUp'])){
