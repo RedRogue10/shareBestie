@@ -1,6 +1,9 @@
 <?php
    ob_start();
    session_start();
+   if(isset($_SESSION['userID'])){
+    header("Location: home.php");
+   }
 ?>
 <?php
     include 'DBConnect.php';
@@ -11,9 +14,9 @@
     }
     $email = $_POST['email'];
     if(isset($_POST['Login'])){
-        $getUsers = "SELECT Email FROM user";
-        $users  =  array_values($conn->query($getUsers)->fetch_assoc());
-        if(!$users){
+        $getUsers = "SELECT Email FROM user WHERE Email = '$email'";
+        $users  = "";  
+        if(!($users = $conn->query($getUsers)->fetch_assoc())){
             $msg = "Email not used. Register here.";
         }else if (in_array($email, $users)) {
           $getPass = "SELECT * FROM user WHERE Email = '$email' ";
@@ -23,12 +26,13 @@
              $_SESSION['timeout'] = time();
              $_SESSION['userID'] = $pass['UserID'];
              $_SESSION['username'] = $pass['Username'];
-             header("Location: index.html");
+             header("Location: home.php");
              
-          } else { 
+          }else { 
              $msg = "You have entered wrong Password"; 
           }
        }else {
+          echo $users[0];
           $msg = "You have entered wrong user name";
        }
        
