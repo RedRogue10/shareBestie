@@ -1,19 +1,6 @@
-<!DOCTYPE html>
 <?php 
     session_start();
-    include 'dbConnect.php';
-    $courseID = $_GET['id'];
-
-    // Query course information
-    $sql = "SELECT * FROM course WHERE CourseId = '$courseID'";
-    $courseRow = $conn->query($sql)->fetch_assoc();
-    
-    // Query Posts Under Course
-    $sql = "SELECT * FROM postUnder NATURAL JOIN post WHERE CourseID = '$courseID'";
-    $postsUnder = $conn->query($sql);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,13 +30,14 @@
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
+        <!-- Log In and Sign Up for Logged In and Nonlogged In Users -->
         <?php 
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
-                        <!--Login Form -->
+                        <!--Account Button -->
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
-                        <!--Signup Form -->
+                        <!--Logout Button-->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
@@ -64,30 +52,39 @@
         ?>
     </header>
 
-    <!-- Main Body -->
-    <section id="section1" class="section section1">
-        <h2><?php echo $courseRow['CourseID']?></h2>
-        <p><?php echo $courseRow['Description']?></p>
-        <?php
-        if(isset($_SESSION['userID'])){
-            echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
-        }
-        ?>
-                <?php
-                    if ($postsUnder->num_rows > 0){
-                        while($row = $postsUnder->fetch_assoc()){
-                            echo "<a href=postPage.php?postID=".$row['PostID']."><div class='posts'>".
-                                "<h3>".$row['Title']."</h3>".
-                                "<p>".$row['Content']."</p>".
-                                "<p>".$row['PostDate']."</p>".
-                            "</a></div>";
-                        }}
-        
-        ?>
-        </section>
+    <!-- Main Content Section -->
+    <section id="about-us" class="sectio1n section1">
+        <div class="container" style="background-color:rgba(255,255,255,0.5)">
+            <h1>About Us</h1>
+            <p>Welcome to shareBestie, your one-stop platform for collaborative learning and knowledge sharing among students!</p>
+            
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide a supportive community where students can come together to share class notes, insights, and study resources to enhance their learning experience.</p>
+            
+            <h2>Our Vision</h2>
+            <p >We envision a world where education is accessible to all, and students can easily connect with peers to learn and grow together.</p>
+            
+            <h2>Our Team</h2>
+            <p>Meet the passionate team behind shareBestie:</p>
+            <ul>
+                <li>Aguirre</li>
+                <li>Dicar</li>
+                <li>Vincoy</li>
+            </ul>
+            
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, feel free to contact us:</p>
+            <ul>
+                <li>Email: info@sharebestie.com</li>
+                <li>Phone: +1234567890</li>
+                <li>Address: 123 Main Street, City, Country</li>
+            </ul>
+        </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
+    
+   <!-- Footer Section -->
+   <footer>
         <!-- Contact Information -->
         <div class="contact-info">
             <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
@@ -101,5 +98,6 @@
             </ul>
         </div>
     </footer>
+
 </body>
 </html>

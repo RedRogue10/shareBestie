@@ -28,7 +28,7 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><a href="about.php">About Us</a></li>
                <!--  <li><a href="/login">Login</a></li>
                 <li><a href="signup">Sign up</a></li> -->
             </ul>
@@ -37,7 +37,6 @@
     <section class="course_section">
         <div>
             <form action="tutorSet.php" method="POST">
-                <input type="email" name = "email" placeholder="enter tutor email">
                 <select class="expand" name="userID" >
                 <option value="" disabled="">----Select Tutor's Courses-----</option>
                 <?php 
