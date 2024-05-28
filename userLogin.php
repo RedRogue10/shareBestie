@@ -17,7 +17,7 @@
         $getUsers = "SELECT Email FROM user WHERE Email = '$email'";
         $users  = "";  
         if(!($users = $conn->query($getUsers)->fetch_assoc())){
-            $msg = "Email not used. Register here.";
+            $msg = "Email not used. <a href='userSignup.php'>Register here.</a>";
         }else if (in_array($email, $users)) {
           $getPass = "SELECT * FROM user WHERE Email = '$email' ";
           $pass = $conn->query($getPass)->fetch_assoc();    
