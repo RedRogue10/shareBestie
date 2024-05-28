@@ -24,8 +24,6 @@
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
-               <!--  <li><a href="/login">Login</a></li>
-                <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
         <?php 
