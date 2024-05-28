@@ -88,13 +88,35 @@
                 <a href="coursePage.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
             </div>
         </div>
-        <h2>Top Class Notes/Courses</h2>
+        <h2>Top Posts</h2>
         <p>Insert top class notes here.</p>
+        <div class="popular-courses">
+            <div class="course">
+                <h3></h3>
+                <p>This course covers the fundamentals of computer science using the Python programming language.</p>
+                <a href="postPage.php?postID=2" class="btn btn-primary">View Posts</a>
+            </div>
+            <div class="course">
+                <h3>MATH 18 - Introduction to Algebra</h3>
+                <p>This course covers introductory topics on the real number system, algebraic functions, and more.</p>
+                <a href="postPage.php?postID=3" class="btn btn-primary">View Posts</a>
+            </div>
+            <div class="course">
+                <h3>CMSC 56 - 	Discrete Mathematical Structures in Computer Science</h3>
+                <p>Principles of logic, set theory, relations and functions</p>
+                <a href="postPage.php?postID=6" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
     </section>
 
     <!-- Top Tutors Section -->
     <section id="section3" class="section section3">
         <h2>Top Tutors</h2>
+        <div class="course">
+                <h3>Badaboopie - Gabriel Dominic Dicar</h3>
+                <p></p>
+                <a href="tutorProfile.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
+        </div>
         <p>Insert top tutors here</p>
     </section>
 

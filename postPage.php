@@ -72,7 +72,7 @@
         <?php 
         if(isset($_SESSION['userID'])){
             echo '<form name="commenting" method="POST" action="commentAdd.php">'.
-            '<textarea style="resize:none;height:200px;width:700px" name="content"></textarea>'.
+            '<textarea style="resize:none;height:100px;width: 300px;" name="content"></textarea>'.
             '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
             '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
             }
@@ -86,7 +86,7 @@
                             $sql = "SELECT * FROM comments NATURAL JOIN user WHERE CommentID = '$commentID' ";
                             $name = $conn->query($sql)->fetch_assoc();
 
-                            echo "<div id='post' class='comment'>".
+                            echo "<div id='post' class='posts'>".
                                 "<p>".$row['Content']."<p>".
                                 "<p>".$name['Username']." ".$row['PostDate']."</p>".
                             "</div>";
