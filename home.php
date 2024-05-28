@@ -84,8 +84,8 @@
             </div>
             <div class="course">
                 <h3>CMSC 56 - 	Discrete Mathematical Structures in Computer Science</h3>
-                <p>TPrinciples of logic, set theory, relations and functions</p>
-                <a href="coursePage.php?id=PHYS 101" class="btn btn-primary">View Posts</a>
+                <p>Principles of logic, set theory, relations and functions</p>
+                <a href="coursePage.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
             </div>
         </div>
         <h2>Top Class Notes/Courses</h2>
