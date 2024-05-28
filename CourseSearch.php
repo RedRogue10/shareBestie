@@ -54,7 +54,8 @@ $(document).ready(function(){
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="about-us.html">About Us</a></li>
                <!--  <li><a href="/login">Login</a></li>
                 <li><a href="signup">Sign up</a></li> -->
             </ul>
