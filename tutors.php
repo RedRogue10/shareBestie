@@ -16,7 +16,6 @@
         <ul>
             <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
             <a href="home.php" id="brandname">ShareBestie</a>
-            <li><a href="">Careers</a></li>
             <li><a href="courseSearch.php">Courses</a></li>
             <li><a href="tutors.php">Tutors</a></li>
             <!-- Should insert Account hyperlink if a user has logged in -->
