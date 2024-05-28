@@ -2,7 +2,7 @@
     session_start();
     include 'dbConnect.php';
     $tutorID = $_REQUEST['id'];
-    $sql = "SELECT * FROM user WHERE UserID = '$userID'";
+    $sql = "SELECT * FROM user WHERE UserID = '$tutorID'";
     $row = $conn->query($sql)->fetch_assoc();
     $username = $row['Username'];
     $firstname = $row['FName'];
@@ -64,7 +64,7 @@
     </header>
 
    <!-- Account Display -->
-    <section id="section1" class="section section1">
+    <section id="section1" class="section section2">
         <div class="welcome-content">
             <h1>Welcome to <br><strong>shareBestie!</strong></h1>
         </div>
@@ -75,10 +75,14 @@
             <div>Last Name: <?php echo $lastname?></div>
             <div>Email: <?php echo $email?></div>
         </div>
-        <div>
-            <h1>Teaches</h1>
+        <div class="signupform" style="text-align:center">
+            <h1 id="tableheader">Teaches</h1>
             <?php 
                 $sql = "SELECT * FROM teaches WHERE TutorID ='$tutorID'";
+                $result =  $conn->query($sql);
+                while($row = $result->fetch_assoc()){
+                    echo "<p>".$row['CourseID']."</p>";
+                }
             ?>
         </div>
     </section>
