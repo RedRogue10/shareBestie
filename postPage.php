@@ -71,10 +71,10 @@
         <p><?php echo $postRow['Content']?></p>
         <?php 
         if(isset($_SESSION['userID'])){
-            echo '<form name="commenting" method="POST" action="commentAdd.php    ">
-            <textarea style="resize:none;height:200px;width:700px" name="content"></textarea>
-            <button class="btn btn-primary" type="submit" name="comment">Comment</button>
-            <input type="hidden" value=<?php echo'.$postRow["PostID"].'name="PostID"></form>';
+            echo '<form name="commenting" method="POST" action="commentAdd.php">'.
+            '<textarea style="resize:none;height:200px;width:700px" name="content"></textarea>'.
+            '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
+            '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
             }
         ?>
         <!-- Comment Section -->

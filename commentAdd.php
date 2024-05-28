@@ -9,7 +9,6 @@
     $sql = "INSERT INTO comment (Content,PostDate) VALUES('$content','$date')";
     $conn->query($sql);
     $commentID =  mysqli_insert_id($conn);
-    echo $commentID;
     $sql ="INSERT INTO comments (CommentID, UserID) VALUES('$commentID','$userID')";
     $conn->query($sql);
     $sql = "INSERT INTO commentunder (CommentID, PostID) VALUES('$commentID','$postID')";
