@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include 'dbConnect.php';
-    $userID = $_SESSION['userID'];
+    $tutorID = $_REQUEST['id'];
     $sql = "SELECT * FROM user WHERE UserID = '$userID'";
     $row = $conn->query($sql)->fetch_assoc();
     $username = $row['Username'];
