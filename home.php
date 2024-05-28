@@ -83,8 +83,8 @@
                 <a href="coursePage.php?id=MATH 18" class="btn btn-primary">View Posts</a>
             </div>
             <div class="course">
-                <h3>PHYS 101 - Introduction to Physics</h3>
-                <p>This course provides an overview of basic concepts in physics, including mechanics, thermodynamics, and electromagnetism.</p>
+                <h3>CMSC 56 - 	Discrete Mathematical Structures in Computer Science</h3>
+                <p>TPrinciples of logic, set theory, relations and functions</p>
                 <a href="coursePage.php?id=PHYS 101" class="btn btn-primary">View Posts</a>
             </div>
         </div>
