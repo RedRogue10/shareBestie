@@ -115,7 +115,7 @@
         <div class="course">
                 <h3>Badaboopie - Gabriel Dominic Dicar</h3>
                 <p></p>
-                <a href="tutorProfile.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
+                <a href="tutorProfile.php?id=2" class="btn btn-primary">View Posts</a>
         </div>
         <p>Insert top tutors here</p>
     </section>
