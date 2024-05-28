@@ -65,7 +65,7 @@ nav ul li a:hover {
 
 /* Welcome Section */
 .section1 {
-    height: auto; /* Adjusted height to fit content */
+    min-height: 100vh; /* Adjusted height to fit content */
     padding-top: 100px; /* Add padding top to compensate for the fixed header */
     background-image: url(section1.display.png);
     background-size: cover;
@@ -79,13 +79,13 @@ nav ul li a:hover {
 .section1 .welcome-content {
     width: 40%;
     margin-left: 50px;
+    margin-top: 5%;
+    font-size: larger;
 }
 
 .section1 .welcome-heading {
     border-bottom: 5px solid maroon; /* Add border only to the heading */
     padding-bottom: 10px; /* Add some padding to separate the border from the text */
-}
-
 }
 
 .section1 h1{
@@ -94,24 +94,26 @@ nav ul li a:hover {
 
 .introduction {
     margin-top: auto;
-    width: 60%%;
+    width: 70%;
     padding-bottom: 20px;
+    margin: auto;
 }
 
 .section1 .introduction p{
     line-height: 1.25;
     text-align: justify;
-    font-size: 15px;
+    font-size: x-large;
+    line-height: 190%;
 }
 
 /* Top Courses Section */
 .section2 {
     display: flex; /* Use flexbox */
     flex-direction: column;
-    overflow-x: auto; /
-    height: 100vh; /* Set height to 100% of viewport height */
+    overflow-x: auto;
+    min-height: 100vh; /* Set height to 100% of viewport height */
     padding: 50px 20px; /* Add padding */
-    align-items: : center; /* Center align text */
+    align-items:  center; /* Center align text */
     background-color: #FF9377; /* Background color */
 }
 
@@ -151,7 +153,7 @@ nav ul li a:hover {
 
 /* Top Tutors Section */
 .section3 {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #dcdcdc;
     padding: 50px 20px;
     text-align: center;
@@ -225,7 +227,7 @@ footer {
     border-style: none;
     border-radius: 20px;
     padding: 10px;
-    box-shadow: 1px 1px 2px black;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 .search_section button:hover{
@@ -240,22 +242,11 @@ footer {
     margin-top: 1%;
     margin-right: 5px;
     width: 40%;
-    box-shadow: 1px 1px 2px black;
+    box-shadow: 0 9px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-.welcome-content{
-    margin-top: 5%;
-    margin-bottom: 10%;
-    font-size: larger
-}
-
-.introduction{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: larger;
-    line-height: 220%;
-    font-weight: bold;
-    margin: auto;
-    width: 70%;
+.search_section input:focus{
+    box-shadow: 0 0 16px rgba(0,0,0,0.30), 0 0 0 rgba(0,0,0,0.22);
 }
 
 #searchCards{
@@ -328,4 +319,33 @@ footer {
 
 #addpost-btn:hover{
     background-color: #b23848;
+}
+
+#searchResults{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.searchResults{
+    text-align: left;
+}
+
+.searchResults ul{
+    background-color: antiquewhite;
+    list-style-type: none;
+    padding-left: 0%;
+    margin: auto;
+    width: 45%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.searchResults li{
+    text-align: justify;
+    padding-left: 5%;
+}
+
+.searchResults li:hover{
+    background-color: rgb(221, 197, 166);
 }

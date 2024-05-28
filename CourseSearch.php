@@ -86,7 +86,7 @@ $(document).ready(function(){
                 <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                     <input type="text" size="30" id="searchBox" name="search">
                     <button type="submit" value="Search" name='button' id="search_button">Search</button>
-                    <div id="searchResults"></div>
+                    <div id="searchResults" class="searchResults"></div>
                 </form>
             </div>
             <div id="searchCards">
