@@ -95,4 +95,13 @@
         PRIMARY KEY (CommentID, UserID)
     )";
     $conn->query($sql);
+
+    $sql = "CREATE TABLE teaches(
+        TutorID INT,
+        CourseID INT,
+        FOREIGN KEY (TutorID) REFERENCES user(UserID),
+        FOREIGN KEY (CourseID) REFERENCES course(CourseID),
+        PRIMARY KEY (TutorID, CourseID)
+    )";
+    $conn->query($sql);
     $conn->close();
