@@ -66,24 +66,26 @@
 
     <!-- Main Body -->
     <section id="section1" class="section section1">
-        <h2><?php echo $courseRow['CourseID']?></h2>
-        <p><?php echo $courseRow['Description']?></p>
-        <?php
-        if(isset($_SESSION['userID'])){
-            echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
-        }
-        ?>
-                <?php
-                    if ($postsUnder->num_rows > 0){
-                        while($row = $postsUnder->fetch_assoc()){
-                            echo "<a href=postPage.php?postID=".$row['PostID']."><div class='posts'>".
-                                "<h3>".$row['Title']."</h3>".
-                                "<p>".$row['Content']."</p>".
-                                "<p>".$row['PostDate']."</p>".
-                            "</a></div>";
-                        }}
-        
-        ?>
+        <div class="coursepage-mb">
+            <h2><?php echo $courseRow['CourseID']?></h2>
+            <p><?php echo $courseRow['Description']?></p>
+            </div>
+            <?php
+            if(isset($_SESSION['userID'])){
+                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
+            }
+            ?>
+                    <?php
+                        if ($postsUnder->num_rows > 0){
+                            while($row = $postsUnder->fetch_assoc()){
+                                echo "<a href=postPage.php?postID=".$row['PostID']."><div class='posts'>".
+                                    "<h3>".$row['Title']."</h3>".
+                                    "<p>".$row['Content']."</p>".
+                                    "<p>".$row['PostDate']."</p>".
+                                "</a></div>";
+                            }}
+            
+            ?>
         </section>
 
     <!-- Footer Section -->
