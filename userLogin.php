@@ -26,6 +26,9 @@
              $_SESSION['timeout'] = time();
              $_SESSION['userID'] = $pass['UserID'];
              $_SESSION['username'] = $pass['Username'];
+             if($pass['Email']=='piageaguirre@gmail.com'){
+                $_SESSION['admin'] = true;
+             }
              header("Location: home.php");
              
           }else { 
