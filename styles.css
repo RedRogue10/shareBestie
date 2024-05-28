@@ -247,11 +247,217 @@ footer {
     font-size: larger
 }
 
-.introduction{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: larger;
-    line-height: 220%;
-    font-weight: bold;
-    margin: auto;
-    width: 70%;
+/* CSS styles */
+
+/* Header Section */
+header {
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #8C2F39;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #b23848;
+}
+
+
+.user-auth button{
+    background-color: antiquewhite;
+    color: #8C2F39;
+    border-color: antiquewhite
+}
+
+.user-auth button:active{
+    background-color: #8C2F39;
+    border: #8C2F39;
+    transform: translateY(4px);
+}
+
+.user-auth button:hover{
+    background-color: #FFAF91;
+    border: antiquewhite;
+}
+
+.user-auth form {
+    display:inline-block;
+    margin-left: 10px;
+}
+
+/* Welcome Section */
+/* Welcome Section */
+.section1 {
+    height: auto; /* Adjusted height to fit content */
+    padding-top: 100px; /* Add padding top to compensate for the fixed header */
+    background-image: url(section1.display.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding-bottom: 20px; /* Adjusted padding for spacing */
+}
+
+.section1 .welcome-content {
+    width: 40%;
+    margin-left: 50px;
+}
+
+.section1 .welcome-heading {
+    border-bottom: 5px solid maroon; /* Add border only to the heading */
+    padding-bottom: 10px; /* Add some padding to separate the border from the text */
+}
+
+}
+
+.section1 h1{
+    border-style: solid;
+}
+
+.introduction {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: auto;
+    width: 80%;
+    padding-bottom: 10px;
+    margin: auto;
+}
+
+.section1 .introduction p{
+    line-height: 1.25;
+    text-align: justify;
+    font-size: 15px;
+}
+
+/* Top Courses Section */
+.section2 {
+    display: flex; /* Use flexbox */
+    flex-direction: column;
+    overflow-x: auto; /
+    height: 100vh; /* Set height to 100% of viewport height */
+    padding: 50px 20px; /* Add padding */
+    align-items: : center; /* Center align text */
+    background-color: #FF9377; /* Background color */
+}
+
+/* Ensure flexibility and wrap if necessary */
+.popular-courses {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items from left to right */
+}
+
+/* Style for individual course */
+.course {
+    flex: 0 0 auto; /* Maintain initial width */
+    width: calc(33.33% - 20px); 
+    margin-right: 20px; /* Add margin between items */
+    padding: 15px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 5px; /* Add rounded corners for better appearance */
+    background-color: #f9f9f9; /* Add background color */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* Additional styles for course details */
+.course h3 {
+    margin-top: 0; /* Remove top margin for course title */
+}
+
+.course p {
+    margin-bottom: 0; /* Remove bottom margin for course description */
+}
+
+.course a {
+    display: inline-block; /* Ensure link behaves as a block element */
+}
+
+/*end of Section 2*/
+
+/* Top Tutors Section */
+.section3 {
+    height: 100vh;
+    background-color: #dcdcdc;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #FB785E;
+}
+
+.tutor-list {
+    display: flex; /* Use flexbox to create horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.tutor {
+    flex: 0 0 auto; /* Maintain initial width */
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    margin-right: 20px; /* Add margin between tutor items */
+    /* Add styling for individual tutor items */
+}
+/*End of Section3*/
+
+/* Footer Section */
+footer {
+    background-color: #8C2F39;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+#brandname{
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: xx-large;
+    margin: 0%;
+    padding: 0%;
+}
+
