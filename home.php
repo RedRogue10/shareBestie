@@ -27,7 +27,7 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="/about">About Us</a></li>
+                <li><a href="about.php ">About Us</a></li>
             </ul>
         </nav>
         <!-- Log In and Sign Up for Logged In and Nonlogged In Users -->
@@ -54,11 +54,11 @@
 
    <!-- Welcome Section -->
     <section id="section1" class="section section1">
-        <div class="welcome-content">
-            <h1>Welcome to <br><strong>shareBestie!</strong></h1>
+        <div class="welcome-content" >
+            <h1 style="background-color:rgba(255,255,255,0.8); padding:5px;">Welcome to <br><strong>shareBestie!</strong></h1>
             <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
         </div>
-        <div class="introduction">
+        <div class="introduction " style="background-color:rgba(255,255,255,0.4); padding:10px;">
             <p> At shareBestie, we believe that every student deserves access to quality educational resources to excel in their academic journey. That's why we've created a community where students can come together to share posts and insights on various subjects. Whether you're looking for notes from your recent lecture, eager to contribute your own knowledge or looking for advices on what to do, shareBestie provides the perfect platform to connect with peers and enhance your learning experience. With a diverse range of courses and topics covered, you'll find everything you need. Our user-friendly interface makes it easy to browse, add posts, and add comments, ensuring that valuable information are accessible to all. Join us today and become part of a supportive community of students who are passionate about learning and helping each other succeed. Together, let's make learning a collaborative and enjoyable experience!</p>
         </div>
     </section>
