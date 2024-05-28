@@ -66,19 +66,21 @@
     </header>
 
     <!-- Main Body -->
-    <section id="section1" class="section section1">
-        <h2><?php echo $postRow['Title']?></h2>
-        <p><?php echo $postRow['Content']?></p>
-        <?php 
-        if(isset($_SESSION['userID'])){
-            echo '<form name="commenting" method="POST" action="commentAdd.php">'.
-            '<textarea style="resize:none;height:100px;width: 300px;" name="content"></textarea>'.
-            '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
-            '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
-            }
-        ?>
+    <section id="postpage" class="section section1">
+        <div class="mainbody">
+            <h2><?php echo $postRow['Title']?></h2>
+            <p><?php echo $postRow['Content']?></p>
+            <?php 
+            if(isset($_SESSION['userID'])){
+                echo '<form name="commenting" method="POST" action="commentAdd.php">'.
+                '<textarea style="resize:none;height:100px;width: 300px;" name="content"></textarea>'.
+                '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
+                '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
+                }
+            ?>
+        </div>
         <!-- Comment Section -->
-        <div>
+        <div class="comments">
                 <?php
                     if ($commentsUnder->num_rows > 0){
                         while($row = $commentsUnder->fetch_assoc()){
