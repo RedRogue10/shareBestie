@@ -115,7 +115,6 @@
                 <p></p>
                 <a href="tutorProfile.php?id=2" class="btn btn-primary">View Posts</a>
         </div>
-        <p>Insert top tutors here</p>
     </section>
 
     <!-- Footer Section -->
