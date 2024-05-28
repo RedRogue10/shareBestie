@@ -67,19 +67,74 @@ nav ul li a:hover {
 .section1 {
     height: 100vh; /* Adjusted height to fill the viewport */
     padding-top: 100px; /* Add padding top to compensate for the fixed header */
-    background-color: antiquewhite;
-    text-align: center;
+    background-image: url(section1.display.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
     background-color: #FFAF91;
 }
 
-/* Top Class Notes Section */
-.section2 {
-    height: 100vh;
-    background-color: #f0f0f0;
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #FF9377;
+.section1 .welcome-content {
+    margin-left: 50px; /* Adjust margin to move content away from the left edge */
 }
+
+.section1 .introduction {
+    margin-top: auto; /* Push the introduction content to the bottom */
+    margin-left: 50px; /* Adjust margin to move content away from the left edge */
+}
+
+.section1 .introduction p{
+    text-align: justify;
+    font-size: 15px;
+}
+
+/* Top Courses Section */
+#section2 {
+    display: flex; /* Use flexbox */
+    overflow-x: auto; /
+    height: 100vh; /* Set height to 100% of viewport height */
+    padding: 50px 20px; /* Add padding */
+    text-align: center; /* Center align text */
+    background-color: #FF9377; /* Background color */
+}
+
+/* Ensure flexibility and wrap if necessary */
+.popular-courses {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items from left to right */
+}
+
+/* Style for individual course */
+.course {
+    flex: 0 0 auto; /* Maintain initial width */
+    width: calc(33.33% - 20px); 
+    margin-right: 20px; /* Add margin between items */
+    padding: 15px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 5px; /* Add rounded corners for better appearance */
+    background-color: #f9f9f9; /* Add background color */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* Additional styles for course details */
+.course h3 {
+    margin-top: 0; /* Remove top margin for course title */
+}
+
+.course p {
+    margin-bottom: 0; /* Remove bottom margin for course description */
+}
+
+.course a {
+    display: inline-block; /* Ensure link behaves as a block element */
+}
+
+/*end of Section 2*/
 
 /* Top Tutors Section */
 .section3 {
@@ -90,6 +145,20 @@ nav ul li a:hover {
     background-color: #FB785E;
 }
 
+.tutor-list {
+    display: flex; /* Use flexbox to create horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Add horizontal scrolling if needed */
+    padding: 20px 0; /* Add padding as needed */
+}
+
+.tutor {
+    flex: 0 0 auto; /* Maintain initial width */
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    margin-right: 20px; /* Add margin between tutor items */
+    /* Add styling for individual tutor items */
+}
+/*End of Section3*/
 
 /* Footer Section */
 footer {
