@@ -28,55 +28,43 @@
                 <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Logout -->
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        ?>
     </header>
+    <section class="course_section">
+        <div>
+            <form action="tutorSet.php" method="POST">
+                <input type="email" name = "email" placeholder="enter tutor email">
+                <select class="expand" name="userID" >
+                <option value="" disabled="">----Select Tutor's Courses-----</option>
+                <?php 
+                    include 'dbConnect.php';
+                    $sql = "SELECT * FROM user";
+                    $result = $conn->query($sql);
 
-    <section id="course_section" class="course_section">
-        <div class="search_section">
-            <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-                <input type="text" size="30" id="searchBox" name="search">
-                <button type="submit" value="Search" name='button' id="search_button">Search</button>
-                <div id="searchResults"></div>
-            </form>
-        </div>
-        <div id="searchCards">
-            <?php
-                include 'dbConnect.php';
-                $req = '';
-                if(isset($_REQUEST['button'])){
-                    $req = $_REQUEST['button'];}
-
-                switch($req){
-                    case 'Search':
-                        $name = $_POST['search'];
-                        $sql = "SELECT * FROM Course WHERE CourseID LIKE '%$name%'";
-                        $result = $conn->query($sql);
-
-                        while($course = $result->fetch_assoc()){
-                            echo    "<div class='posts'>".
-                                    "<a href='coursePage.php?id=".$course["CourseID"]."'><p class='coursetitle'>".$course["CourseID"]."</p><p>".$course["Description"]."</p></a>".
-                                    "<br></div>";
+                    if($result -> num_rows > 0 ){
+                        while($row = $result->fetch_assoc()){
+                            echo "<option value='".$row['UserID']."'>".$row['Username']."</option>";
                         }
-                }   
-            ?>
+                    }
+                
+                ?>
+                </select>
+                <select class="expand" name="courses[]" multiple>
+                <option value="" disabled="">----Select Tutor's Courses-----</option>
+                <?php 
+                    include 'dbConnect.php';
+                    $sql = "SELECT * FROM course";
+                    $result = $conn->query($sql);
+
+                    if($result -> num_rows > 0 ){
+                        while($row = $result->fetch_assoc()){
+                            echo "<option value='".$row['CourseID']."'>".$row['CourseID']."</option>";
+                        }
+                    }
+                
+                ?>
+                </select>
+                <button name="addTutor" type="submit">Set As Tutor</button>
+            </form>
         </div>
     </section>
 
