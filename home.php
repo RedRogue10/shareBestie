@@ -28,17 +28,16 @@
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
-               <!--  <li><a href="/login">Login</a></li>
-                <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
+        <!-- Log In and Sign Up for Logged In and Nonlogged In Users -->
         <?php 
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
-                        <!--Login Form -->
+                        <!--Account Button -->
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
-                        <!--Logout -->
+                        <!--Logout Button-->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
@@ -50,8 +49,6 @@
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
-        
-        
         ?>
     </header>
 
@@ -62,16 +59,16 @@
             <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
         </div>
         <div class="introduction">
-            <p> At shareBestie, we believe that every student deserves access to quality educational resources to excel in their academic journey. That's why we've created a community where students can come together to share class notes and insights on various subjects. Whether you're looking for notes from your recent lecture or eager to contribute your own knowledge, shareBestie provides the perfect platform to connect with peers and enhance your learning experience. With a diverse range of courses and topics covered, you'll find everything you need. Our user-friendly interface makes it easy to browse, upload, and view notes, ensuring that valuable learning resources are accessible to all. Join us today and become part of a supportive community of students who are passionate about learning and helping each other succeed. Together, let's make learning a collaborative and enjoyable experience!</p>
+            <p> At shareBestie, we believe that every student deserves access to quality educational resources to excel in their academic journey. That's why we've created a community where students can come together to share posts and insights on various subjects. Whether you're looking for notes from your recent lecture, eager to contribute your own knowledge or looking for advices on what to do, shareBestie provides the perfect platform to connect with peers and enhance your learning experience. With a diverse range of courses and topics covered, you'll find everything you need. Our user-friendly interface makes it easy to browse, add posts, and add comments, ensuring that valuable information are accessible to all. Join us today and become part of a supportive community of students who are passionate about learning and helping each other succeed. Together, let's make learning a collaborative and enjoyable experience!</p>
         </div>
     </section>
 
-
-    <!-- Top Class Notes Section -->
+    <!-- Popular Courses Section -->
     <section id="section2" class="section section2">
         <h2>Popular Courses</h2>
         <p>Check out different courses now!</p>
         <div class="popular-courses">
+            <!-- List of Popular Course with Posts ATM -->
             <div class="course">
                 <h3>CMSC 11 - Introduction to Python Programming</h3>
                 <p>This course covers the fundamentals of computer science using the Python programming language.</p>
@@ -88,8 +85,9 @@
                 <a href="coursePage.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
             </div>
         </div>
+        <!-- Top Posts Section -->
         <h2>Top Posts</h2>
-        <p>Insert top class notes here.</p>
+       <p>View top posts in shareBestie at the moment!</p>
         <div class="popular-courses">
             <div class="course">
                 <h3>Question Topics</h3>
@@ -124,7 +122,7 @@
     <footer>
         <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
         <!-- Footer Links -->
         <div class="footer-links">
