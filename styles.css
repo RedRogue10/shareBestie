@@ -389,3 +389,10 @@ footer {
     margin: auto;
     width: 50%;
 }
+
+.coursepage-mb{
+    background-color: #dcdcdc83;
+    margin-inline:auto;
+    width: 100%;
+    padding: 5%;
+}
