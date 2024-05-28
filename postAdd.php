@@ -15,6 +15,7 @@
     $conn->query($sql);
     $sql = "INSERT INTO postUnder (PostID, CourseID) VALUES ('$postID','$courseID')";
     $conn->query($sql);
+    header("Location:postPage.php?postID=$postID");
    }
    
    
