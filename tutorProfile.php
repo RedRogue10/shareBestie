@@ -75,6 +75,12 @@
             <div>Last Name: <?php echo $lastname?></div>
             <div>Email: <?php echo $email?></div>
         </div>
+        <div>
+            <h1>Teaches</h1>
+            <?php 
+                $sql = "SELECT * FROM teaches WHERE TutorID ='$tutorID'";
+            ?>
+        </div>
     </section>
 
     <!-- Footer Section -->

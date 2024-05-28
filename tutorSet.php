@@ -5,7 +5,7 @@
     $result = $conn->query($sql)->fetch_assoc();
     $userID = $_POST['userID'];
     foreach($_POST['courses'] as $course){
-        $sql = "INSERT INTO teaches (TutorID,CourseID) VALUES($userID,$course)";
+        $sql = "INSERT INTO teaches(TutorID,CourseID) VALUES('$userID','$course')";
         $conn->query($sql);
     }
     $sql = "UPDATE user 
@@ -13,6 +13,7 @@
             WHERE UserID = '$userID'";
     $conn->query($sql);
 
+    header("Location:tutorAdd.php");
 
 
 ?>
