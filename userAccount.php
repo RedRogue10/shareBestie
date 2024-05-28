@@ -64,7 +64,7 @@
     </header>
 
    <!-- Account Display -->
-    <section id="section1" class="section section1">
+    <section id="section1" class="section section2">
         <div class="welcome-content">
             <h1>Welcome to <br><strong>shareBestie!</strong></h1>
         </div>

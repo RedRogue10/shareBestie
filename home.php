@@ -92,13 +92,13 @@
         <p>Insert top class notes here.</p>
         <div class="popular-courses">
             <div class="course">
-                <h3></h3>
-                <p>This course covers the fundamentals of computer science using the Python programming language.</p>
+                <h3>Question Topics</h3>
+                <p>Hello, what are the topics covered in the post?</p>
                 <a href="postPage.php?postID=2" class="btn btn-primary">View Posts</a>
             </div>
             <div class="course">
-                <h3>MATH 18 - Introduction to Algebra</h3>
-                <p>This course covers introductory topics on the real number system, algebraic functions, and more.</p>
+                <h3>Question: possible Teacher?</h3>
+                <p>Who are the possible teachers for this course?</p>
                 <a href="postPage.php?postID=3" class="btn btn-primary">View Posts</a>
             </div>
             <div class="course">
