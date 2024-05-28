@@ -67,7 +67,7 @@
     </section>
 
 
-    <!-- Popular Courses Section -->
+    <!-- Top Class Notes Section -->
     <section id="section2" class="section section2">
         <h2>Popular Courses</h2>
         <p>Check out different courses now!</p>
@@ -88,31 +88,21 @@
                 <a href="coursePage.php?id=PHYS 101" class="btn btn-primary">View Posts</a>
             </div>
         </div>
+        <h2>Top Class Notes/Courses</h2>
+        <p>Insert top class notes here.</p>
     </section>
-
 
     <!-- Top Tutors Section -->
     <section id="section3" class="section section3">
         <h2>Top Tutors</h2>
-        <p>Aside from offering course information and notes, we help connect you to the best tutors on campus for your study needs.</p>
-        <div class="tutor-list">
-             <?php
-            // PHP code here to fetch tutor information from your database
-            for ($i = 0; $i < 3; $i++) { // Displaying three sample tutors
-                echo '<div class="tutor">';
-                echo '<h3>Tutor Name</h3>'; // Replace with actual tutor name fetched from database
-                echo '<p>Tutor Description</p>'; // Replace with actual tutor description fetched from database
-                echo '</div>';
-            }
-        ?>
-        </div>
+        <p>Insert top tutors here</p>
     </section>
 
     <!-- Footer Section -->
     <footer>
         <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: shareBestie_dva.com | Follow Us: <a href="#">Facebook</a></p>
+            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
         </div>
         <!-- Footer Links -->
         <div class="footer-links">

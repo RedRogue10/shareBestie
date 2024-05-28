@@ -45,13 +45,29 @@
 
     <div class="signupform">
     <h1 id="tableHeader">New Post</h1>
-        <form action='<?php echo $_SERVER["PHP_SELF"]?>' method ="POST">
-            <input type="hidden" name="courseID" value ="<?php echo $courseID?>">
-            <input type="text" name="title" placeholder="Post Title">
-            <input type="textarea" name="content" placeholder="Write your post here.">
-            <button class="btn btn-primary" id="submitPost" type="submit" name="submitPost">Post</button>
-        </form>
+        <div class="addpost">
+            <form action='<?php echo $_SERVER["PHP_SELF"]?>' method ="POST">
+                <input type="hidden" name="courseID" value ="<?php echo $courseID?>">    
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="title" placeholder="Post Title">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea name="content" id="description" placeholder="Write your post here."></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-primary" id="submitPost" type="submit" name="submitPost">Post</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
+    </div>
     
 </body>
 </html>
