@@ -69,11 +69,14 @@
     <section id="section1" class="section section1">
         <h2><?php echo $postRow['Title']?></h2>
         <p><?php echo $postRow['Content']?></p>
-        <form name="commenting" method="POST" action="commentAdd.php    ">
-            <textarea style="resize:none;height:200px;width:700px" name="content"   ></textarea>
+        <?php 
+        if(isset($_SESSION['userID'])){
+            echo '<form name="commenting" method="POST" action="commentAdd.php    ">
+            <textarea style="resize:none;height:200px;width:700px" name="content"></textarea>
             <button class="btn btn-primary" type="submit" name="comment">Comment</button>
-            <input type="hidden" value=<?php echo $postRow['PostID']?> name="PostID">
-        </form>
+            <input type="hidden" value=<?php echo'.$postRow["PostID"].'name="PostID"></form>';
+            }
+        ?>
         <!-- Comment Section -->
         <div>
                 <?php
@@ -88,6 +91,8 @@
                                 "<p>".$name['Username']." ".$row['PostDate']."</p>".
                             "</div>";
                         }
+                    }else{
+                        echo "<div> <p> There are no comments for this post </p></div>";
                     }
         
                 ?>
