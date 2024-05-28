@@ -67,52 +67,23 @@
     </section>
 
 
-    <!-- Popular Courses Section -->
+    <!-- Top Class Notes Section -->
     <section id="section2" class="section section2">
-        <h2>Popular Courses</h2>
-        <p>Check out different courses now!</p>
-        <div class="popular-courses">
-            <div class="course">
-                <h3>CMSC 11 - Introduction to Python Programming</h3>
-                <p>This course covers the fundamentals of computer science using the Python programming language.</p>
-                <a href="coursePosts.php?course=CMSC 11" class="btn btn-primary">View Posts</a>
-            </div>
-            <div class="course">
-                <h3>MATH 18 - Introduction to Algebra</h3>
-                <p>This course covers introductory topics on the real number system, algebraic functions, and more.</p>
-                <a href="coursePosts.php?course=MATH 18" class="btn btn-primary">View Posts</a>
-            </div>
-            <div class="course">
-                <h3>PHYS 101 - Introduction to Physics</h3>
-                <p>This course provides an overview of basic concepts in physics, including mechanics, thermodynamics, and electromagnetism.</p>
-                <a href="coursePosts.php?course=PHYS 101" class="btn btn-primary">View Posts</a>
-            </div>
-        </div>
+        <h2>Top Class Notes/Courses</h2>
+        <p>Insert top class notes here.</p>
     </section>
-
 
     <!-- Top Tutors Section -->
     <section id="section3" class="section section3">
         <h2>Top Tutors</h2>
-        <p>Aside from offering course information and notes, we help connect you to the best tutors on campus for your study needs.</p>
-        <div class="tutor-list">
-             <?php
-            // PHP code here to fetch tutor information from your database
-            for ($i = 0; $i < 3; $i++) { // Displaying three sample tutors
-                echo '<div class="tutor">';
-                echo '<h3>Tutor Name</h3>'; // Replace with actual tutor name fetched from database
-                echo '<p>Tutor Description</p>'; // Replace with actual tutor description fetched from database
-                echo '</div>';
-            }
-        ?>
-        </div>
+        <p>Insert top tutors here</p>
     </section>
 
     <!-- Footer Section -->
     <footer>
         <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: shareBestie_dva.com | Follow Us: <a href="#">Facebook</a></p>
+            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
         </div>
         <!-- Footer Links -->
         <div class="footer-links">
