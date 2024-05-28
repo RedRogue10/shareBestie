@@ -76,11 +76,11 @@
                 <?php
                     if ($postsUnder->num_rows > 0){
                         while($row = $postsUnder->fetch_assoc()){
-                            echo "<a href=postPage.php?postID=".$row['PostID']."><div id='post' class=''>".
+                            echo "<a href=postPage.php?postID=".$row['PostID']."><div class='posts'>".
                                 "<h3>".$row['Title']."</h3>".
                                 "<p>".$row['Content']."</p>".
                                 "<p>".$row['PostDate']."</p>".
-                            "</div></a>";
+                            "</a></div>";
                         }}
         
         ?>
