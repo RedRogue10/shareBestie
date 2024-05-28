@@ -72,7 +72,6 @@ nav ul li a:hover {
     background-color: #FFAF91;
 }
 
-<<<<<<< HEAD
 .section1 .welcome-content {
     width: 40%;
     margin-left: 50px;
@@ -81,8 +80,6 @@ nav ul li a:hover {
 .section1 .welcome-heading {
     border-bottom: 5px solid maroon; /* Add border only to the heading */
     padding-bottom: 10px; /* Add some padding to separate the border from the text */
-}
-
 }
 
 .section1 h1{
@@ -102,9 +99,6 @@ nav ul li a:hover {
 }
 
 /* Top Courses Section */
-=======
-/* Top Class Notes Section */
->>>>>>> c680608d29bd37b1759bce5583c7f2b7cd305a75
 .section2 {
     height: 100vh;
     background-color: #f0f0f0;
