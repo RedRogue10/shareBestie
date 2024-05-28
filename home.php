@@ -75,17 +75,17 @@
             <div class="course">
                 <h3>CMSC 11 - Introduction to Python Programming</h3>
                 <p>This course covers the fundamentals of computer science using the Python programming language.</p>
-                <a href="coursePosts.php?course=CMSC 11" class="btn btn-primary">View Posts</a>
+                <a href="coursePage.php?id=CMSC 11" class="btn btn-primary">View Posts</a>
             </div>
             <div class="course">
                 <h3>MATH 18 - Introduction to Algebra</h3>
                 <p>This course covers introductory topics on the real number system, algebraic functions, and more.</p>
-                <a href="coursePosts.php?course=MATH 18" class="btn btn-primary">View Posts</a>
+                <a href="coursePage.php?id=MATH 18" class="btn btn-primary">View Posts</a>
             </div>
             <div class="course">
                 <h3>PHYS 101 - Introduction to Physics</h3>
                 <p>This course provides an overview of basic concepts in physics, including mechanics, thermodynamics, and electromagnetism.</p>
-                <a href="coursePosts.php?course=PHYS 101" class="btn btn-primary">View Posts</a>
+                <a href="coursePage.php?id=PHYS 101" class="btn btn-primary">View Posts</a>
             </div>
         </div>
     </section>
