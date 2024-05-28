@@ -64,41 +64,55 @@ nav ul li a:hover {
 }
 
 /* Welcome Section */
+/* Welcome Section */
 .section1 {
-    height: 100vh; /* Adjusted height to fill the viewport */
+    height: auto; /* Adjusted height to fit content */
     padding-top: 100px; /* Add padding top to compensate for the fixed header */
     background-image: url(section1.display.png);
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: flex-start; /* Align items to the left */
-    text-align: left; /* Align text to the left */
-    background-color: #FFAF91;
+    flex-direction: column; /* Align items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding-bottom: 20px; /* Adjusted padding for spacing */
 }
 
 .section1 .welcome-content {
-    margin-left: 50px; /* Adjust margin to move content away from the left edge */
+    width: 40%;
+    margin-left: 50px;
 }
 
-.section1 .introduction {
-    margin-top: auto; /* Push the introduction content to the bottom */
-    margin-left: 50px; /* Adjust margin to move content away from the left edge */
+.section1 .welcome-heading {
+    border-bottom: 5px solid maroon; /* Add border only to the heading */
+    padding-bottom: 10px; /* Add some padding to separate the border from the text */
+}
+
+}
+
+.section1 h1{
+    border-style: solid;
+}
+
+.introduction {
+    margin-top: auto;
+    width: 60%%;
+    padding-bottom: 20px;
 }
 
 .section1 .introduction p{
+    line-height: 1.25;
     text-align: justify;
     font-size: 15px;
 }
 
 /* Top Courses Section */
-#section2 {
+.section2 {
     display: flex; /* Use flexbox */
+    flex-direction: column;
     overflow-x: auto; /
     height: 100vh; /* Set height to 100% of viewport height */
     padding: 50px 20px; /* Add padding */
-    text-align: center; /* Center align text */
+    align-items: : center; /* Center align text */
     background-color: #FF9377; /* Background color */
 }
 
@@ -148,8 +162,8 @@ nav ul li a:hover {
 .tutor-list {
     display: flex; /* Use flexbox to create horizontal layout */
     flex-wrap: nowrap; /* Prevent wrapping */
-    overflow-x: auto; /* Add horizontal scrolling if needed */
-    padding: 20px 0; /* Add padding as needed */
+    overflow-x: auto;
+    padding: 20px 0;
 }
 
 .tutor {
