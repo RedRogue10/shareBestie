@@ -65,23 +65,25 @@
     </header>
 
     <!-- Main Body -->
-    <section id="section1" class="section section1">
-        <h2><?php echo $courseRow['CourseID']?></h2>
-        <p><?php echo $courseRow['Description']?></p>
-        <?php
-            echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
-        ?>
-                <?php
-                    if ($postsUnder->num_rows > 0){
-                        while($row = $postsUnder->fetch_assoc()){
-                            echo "<a href=postPage.php?postID=".$row['PostID']."><div id='post' class=''>".
-                                "<h3>".$row['Title']."</h3>".
-                                "<p>".$row['Content']."</p>".
-                                "<p>".$row['PostDate']."</p>".
-                            "</div></a>";
-                        }}
-        
-        ?>
+    <section id="coursepage" class="course_section">
+        <div class="course">
+            <h2><?php echo $courseRow['CourseID']?></h2>
+            <p><?php echo $courseRow['Description']?></p>
+            <?php
+                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="addpost-btn" type="submit" name="addPost">Add Post</button></a>';
+            ?>
+                    <?php
+                        if ($postsUnder->num_rows > 0){
+                            while($row = $postsUnder->fetch_assoc()){
+                                echo "<a href=postPage.php?postID=".$row['PostID']."><div id='post' class=''>".
+                                    "<h3>".$row['Title']."</h3>".
+                                    "<p>".$row['Content']."</p>".
+                                    "<p>".$row['PostDate']."</p>".
+                                "</div></a>";
+                            }}
+            
+            ?>
+        </div>
         </section>
 
     <!-- Footer Section -->

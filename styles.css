@@ -133,8 +133,10 @@ footer {
 /* Tutors Page */
 
 .search_section{
+    position: fixed;
+    width: 100%;
+    margin: auto;
     text-align: center;
-    margin-top: 130px;
 }
 
 .search_section button{
@@ -143,6 +145,7 @@ footer {
     border-style: none;
     border-radius: 20px;
     padding: 10px;
+    box-shadow: 1px 1px 2px black;
 }
 
 .search_section button:hover{
@@ -154,8 +157,10 @@ footer {
     border-style: none;
     border-radius: 20px;
     padding: 10px;
-    margin: 0.3%;
+    margin-top: 1%;
+    margin-right: 5px;
     width: 40%;
+    box-shadow: 1px 1px 2px black;
 }
 
 .welcome-content{
@@ -171,4 +176,76 @@ footer {
     font-weight: bold;
     margin: auto;
     width: 70%;
+}
+
+#searchCards{
+    padding-top: 5%;
+}
+
+.posts{
+    background-color: #f0f0f0;
+    width: 60%;
+    margin: auto;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
+    border-radius: 30px;
+    padding-inline: 5%;
+    padding-block: 1%;
+    text-align: justify;
+}
+
+.posts:hover{
+    background-color: #cacacaad;
+}
+
+.posts .coursetitle{
+    color: #8C2F39;
+    font-weight: bold;
+}
+
+.posts a{
+    text-decoration: none;
+    color: #111;
+}
+
+
+.course_section{
+    min-height: 100vh;
+    overflow: hidden;
+    padding-top: 8%;
+    padding-bottom: 15%;;
+}
+
+#coursepage{
+    padding-top: 15%;
+}
+
+.course{
+    background-color: #FFAF91;
+    margin-top: 100px;
+    margin: auto;   
+    width: 90%;
+    text-align: justify;
+    border-radius: 30px;
+    padding-inline: 5%;
+    padding-block: 2%;
+}
+
+.course h2{
+    text-align: center;
+    color: #8C2F39;
+}
+
+.course p{
+    line-height: 30px;
+}
+
+#addpost-btn{
+    background-color: #8C2F39;
+    border: #8C2F39;
+    align-self: end;
+}
+
+#addpost-btn:hover{
+    background-color: #b23848;
 }

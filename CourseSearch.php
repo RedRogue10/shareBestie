@@ -81,7 +81,7 @@ $(document).ready(function(){
         
         ?>
     </header>
-        <section id ="section1 "class="section section1" >
+        <section id ="course_section "class="course_section" >
             <div class="search_section">
                 <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                     <input type="text" size="30" id="searchBox" name="search">
@@ -103,15 +103,13 @@ $(document).ready(function(){
                             $result = $conn->query($sql);
 
                             while($course = $result->fetch_assoc()){
-                            echo    "<div>".
-                                    "<a href='coursePage.php?id=".$course["CourseID"]."'><p>".$course["CourseID"]." ".$course["Description"]."</p></a>".
+                            echo    "<div class='posts'>".
+                                    "<a href='coursePage.php?id=".$course["CourseID"]."'><p class='coursetitle'>".$course["CourseID"]."</p><p>".$course["Description"]."</p></a>".
                                     "<br></div>";
                             }
-
                     }   
 
-
-?>
+                ?>
             </div>
         </section>
         <!-- Footer Section -->

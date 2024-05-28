@@ -20,6 +20,7 @@
     text-align: center;
     background-color: antiquewhite;
     margin-top: 10%;
+    margin-bottom: 5%;
     margin-inline: 15%;
     padding-top: 0%;
     padding-inline: 0%;
@@ -124,4 +125,30 @@
     padding: 10px;
     margin: 0.3%;
     width: 40%;
+}
+
+.addpost{
+    margin-top: 2%;
+}
+
+.addpost input:active{
+    border: #8C2F39 solid;
+}
+
+.addpost textarea{
+    overflow: hidden;
+    resize: horizontal;
+    width: 70%;
+    height: 300px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+#submitPost{
+    background-color: #8C2F39;
+    border: #8C2F39;
+}
+
+#submitPost:hover{
+    background-color: #b23848;
 }
