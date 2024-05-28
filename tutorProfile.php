@@ -1,20 +1,14 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     include 'dbConnect.php';
-    if(isset($_GET['postID'])){
-        $postID = $_GET['postID'];
-    }
-    // Query post information
-    $sql = "SELECT * FROM post WHERE postID = '$postID'";
-    $postRow = $conn->query($sql)->fetch_assoc();
-    
-    // Query comments under post
-    $sql = "SELECT * FROM commentUnder NATURAL JOIN comment WHERE PostID = '$postID'";
-    $commentsUnder = $conn->query($sql);
-
+    $tutorID = $_REQUEST['id'];
+    $sql = "SELECT * FROM user WHERE UserID = '$userID'";
+    $row = $conn->query($sql)->fetch_assoc();
+    $username = $row['Username'];
+    $firstname = $row['FName'];
+    $lastname = $row['LName'];
+    $email = $row['Email'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,15 +36,17 @@
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="/about">About Us</a></li>
+               <!--  <li><a href="/login">Login</a></li>
+                <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
         <?php 
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
                         <!--Login Form -->
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+                        <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
-                        <!--Signup Form -->
+                        <!--Logout -->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
@@ -62,43 +58,32 @@
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
+        
+        
         ?>
     </header>
 
-    <!-- Main Body -->
+   <!-- Account Display -->
     <section id="section1" class="section section1">
-        <h2><?php echo $postRow['Title']?></h2>
-        <p><?php echo $postRow['Content']?></p>
-        <form name="commenting" method="POST" action="commentAdd.php    ">
-            <textarea style="resize:none;height:200px;width:700px" name="content"   ></textarea>
-            <button class="btn btn-primary" type="submit" name="comment">Comment</button>
-            <input type="hidden" value=<?php echo $postRow['PostID']?> name="PostID">
-        </form>
-        <!-- Comment Section -->
+        <div class="welcome-content">
+            <h1>Welcome to <br><strong>shareBestie!</strong></h1>
+        </div>
         <div>
-                <?php
-                    if ($commentsUnder->num_rows > 0){
-                        while($row = $commentsUnder->fetch_assoc()){
-                            $commentID = $row['CommentID'];
-                            $sql = "SELECT * FROM comments NATURAL JOIN user WHERE CommentID = '$commentID' ";
-                            $name = $conn->query($sql)->fetch_assoc();
-
-                            echo "<div id='post' class='comment'>".
-                                "<p>".$row['Content']."<p>".
-                                "<p>".$name['Username']." ".$row['PostDate']."</p>".
-                            "</div>";
-                        }
-                    }
-        
-                ?>
+            <h1>Account</h1>
+            <div>Username:  <?php echo $username?></div>
+            <div>First Name: <?php echo $firstname?></div>
+            <div>Last Name: <?php echo $lastname?></div>
+            <div>Email: <?php echo $email?></div>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer>
+        <!-- Contact Information -->
         <div class="contact-info">
             <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
         </div>
+        <!-- Footer Links -->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -110,3 +95,4 @@
 
 </body>
 </html>
+
