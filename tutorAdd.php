@@ -1,5 +1,10 @@
 <?php 
     session_start();
+    if(isset($_SESSION['admin'])){
+
+    }else{
+        header("Location:home.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

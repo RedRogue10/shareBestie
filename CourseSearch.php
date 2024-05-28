@@ -95,6 +95,10 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
+        function fill(value){
+    $('#searchBox').val(value);
+    $('#searchResults').hide();
+}
         $(document).ready(function(){
             $("#searchBox").keyup(function(){
                 var name = $('#searchBox').val();
@@ -106,7 +110,6 @@
                         url: "courseSearchResults.php", 
                         data: { search: name },
                         success: function(html){
-                            console.log("test 5");
                             $('#searchResults').html(html).show();
                         }
                     });
