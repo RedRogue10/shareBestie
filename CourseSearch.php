@@ -63,7 +63,7 @@ $(document).ready(function(){
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
                         <!--Login Form -->
-                        <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
                         <!--Logout -->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 

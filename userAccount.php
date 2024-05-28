@@ -1,5 +1,13 @@
 <?php 
     session_start();
+    include 'dbConnect.php';
+    $userID = $_SESSION['userID'];
+    $sql = "SELECT * FROM user WHERE UserID = '$userID'";
+    $row = $conn->query($sql)->fetch_assoc();
+    $username = $row['Username'];
+    $firstname = $row['Fname'];
+    $lastname = $row['Lname'];
+    $email = $row['Email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +44,7 @@
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
                         <!--Login Form -->
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+                        <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
       
                         <!--Logout -->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
@@ -55,28 +63,18 @@
         ?>
     </header>
 
-   <!-- Welcome Section -->
+   <!-- Account Display -->
     <section id="section1" class="section section1">
         <div class="welcome-content">
             <h1>Welcome to <br><strong>shareBestie!</strong></h1>
-            <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
         </div>
-        <div class="introduction">
-            <p> At shareBestie, we believe that every student deserves access to quality educational resources to excel in their academic journey. That's why we've created a community where students can come together to share class notes and insights on various subjects. Whether you're looking for notes from your recent lecture or eager to contribute your own knowledge, shareBestie provides the perfect platform to connect with peers and enhance your learning experience. With a diverse range of courses and topics covered, you'll find everything you need. Our user-friendly interface makes it easy to browse, upload, and view notes, ensuring that valuable learning resources are accessible to all. Join us today and become part of a supportive community of students who are passionate about learning and helping each other succeed. Together, let's make learning a collaborative and enjoyable experience!</p>
+        <div>
+            <h1>Account</h1>
+            <div>Username:  <?php echo $username?></div>
+            <div>First Name: <?php echo $firstname?></div>
+            <div>Last Name: <?php echo $lastname?></div>
+            <div>Email: <?php echo $email?></div>
         </div>
-    </section>
-
-
-    <!-- Top Class Notes Section -->
-    <section id="section2" class="section section2">
-        <h2>Top Class Notes/Courses</h2>
-        <p>Insert top class notes here.</p>
-    </section>
-
-    <!-- Top Tutors Section -->
-    <section id="section3" class="section section3">
-        <h2>Top Tutors</h2>
-        <p>Insert top tutors here</p>
     </section>
 
     <!-- Footer Section -->
