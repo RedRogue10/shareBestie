@@ -1,7 +1,7 @@
 <?php 
     session_start();
+    // Check if the user is an admin. If not, redirect to home.php
     if(isset($_SESSION['admin'])){
-
     }else{
         header("Location:home.php");
     }
@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for tutorAdd.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - shareBestie</title>
@@ -18,6 +19,7 @@
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
 </head>
 <body>
+    <!--Header Section-->
     <header>
         <div class="logo">
             <img src="ShareBestie_Logo.png" alt="Your Website Logo">
@@ -25,57 +27,77 @@
         </div>
         <nav>
             <ul>
+                <!--Navigation Menu-->
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
                 <li><a href="about.php">About Us</a></li>
-               <!--  <li><a href="/login">Login</a></li>
-                <li><a href="signup">Sign up</a></li> -->
             </ul>
         </nav>
+        <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
+        <?php 
+            if(isset($_SESSION['userID'])){
+                echo '<div class="user-auth">
+                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
+                    </div>';
+            }else{
+                echo '<div class="user-auth">
+                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
+                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
+              </div>';
+            }
+        ?>
     </header>
     <section class="course_section">
         <div>
+            <!--Set a tutor for courses-->
             <form action="tutorSet.php" method="POST">
+                <!--Select a tutor-->
                 <select class="expand" name="userID" >
-                <option value="" disabled="">----Select Tutor's Courses-----</option>
-                <?php 
-                    include 'dbConnect.php';
-                    $sql = "SELECT * FROM user";
-                    $result = $conn->query($sql);
+                    <option value="" disabled>----Select Tutor's Courses-----</option>
+                    <?php 
+                        include 'dbConnect.php'; 
+                        $sql = "SELECT * FROM user"; // SQL query to get all users
+                        $result = $conn->query($sql);
 
-                    if($result -> num_rows > 0 ){
-                        while($row = $result->fetch_assoc()){
-                            echo "<option value='".$row['UserID']."'>".$row['Username']."</option>";
+                        if($result -> num_rows > 0 ){
+                            // Loop through each user and create an option in the dropdown
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='".$row['UserID']."'>".$row['Username']."</option>";
+                            }
                         }
-                    }
-                
-                ?>
+                    ?>
                 </select>
+                <!--Select multiple courses for the tutor-->
                 <select class="expand" name="courses[]" multiple>
-                <option value="" disabled="">----Select Tutor's Courses-----</option>
-                <?php 
-                    include 'dbConnect.php';
-                    $sql = "SELECT * FROM course";
-                    $result = $conn->query($sql);
+                    <option value="" disabled>----Select Tutor's Courses-----</option>
+                    <?php 
+                        include 'dbConnect.php'; 
+                        $sql = "SELECT * FROM course"; //SQL query to get all courses
+                        $result = $conn->query($sql);
 
-                    if($result -> num_rows > 0 ){
-                        while($row = $result->fetch_assoc()){
-                            echo "<option value='".$row['CourseID']."'>".$row['CourseID']."</option>";
+                        if($result -> num_rows > 0 ){
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='".$row['CourseID']."'>".$row['CourseID']."</option>";
+                            }
                         }
-                    }
-                
-                ?>
+                    ?>
                 </select>
+                <!--Submit the form -->
                 <button name="addTutor" type="submit">Set As Tutor</button>
             </form>
         </div>
     </section>
 
+    
+    <!--Footer Section-->
     <footer>
+        <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: www.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
         </div>
+         <!--Footer Links-->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -85,6 +107,7 @@
         </div>
     </footer>
 
+    <!--jQuery library for AJAX -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
