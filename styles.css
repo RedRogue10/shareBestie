@@ -1,5 +1,4 @@
 /* CSS styles */
-
 /* Header Section */
 header {
     position: fixed;
@@ -39,7 +38,6 @@ nav ul li a:hover {
     background-color: #b23848;
 }
 
-
 .user-auth button{
     background-color: antiquewhite;
     color: #8C2F39;
@@ -61,18 +59,19 @@ nav ul li a:hover {
     display:inline-block;
     margin-left: 10px;
 }
+
 /*end of Header section*/
 
 /* Welcome Section */
 .section1 {
-    min-height: 100vh; /* Adjusted height to fit content */
-    padding-top: 100px; /* Add padding top to compensate for the fixed header */
+    min-height: 100vh; 
+    padding-top: 100px; 
     background-image: url(section1.display.png);
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column; 
+    align-items: flex-start; 
     padding-bottom: 20px; 
 }
 
@@ -84,8 +83,8 @@ nav ul li a:hover {
 }
 
 .section1 .welcome-heading {
-    border-bottom: 5px solid maroon; /* Add border only to the heading */
-    padding-bottom: 10px; /* Add some padding to separate the border from the text */
+    border-bottom: 5px solid maroon; 
+    padding-bottom: 10px; 
 }
 
 .section1 h1{
@@ -105,52 +104,48 @@ nav ul li a:hover {
     font-size: large;
     line-height: 190%;
 }
-
-/*end of Welcome Section*/
+/*end of Section 1*/
 
 /* Top Courses Section */
 .section2 {
-    display: flex; /* Use flexbox */
+    display: flex; 
     flex-direction: column;
     overflow-x: auto;
-    min-height: 100vh; /* Set height to 100% of viewport height */
-    padding: 50px 20px; /* Add padding */
-    align-items:  center; /* Center align text */
-    background-color: #FF9377; /* Background color */
+    min-height: 100vh; 
+    padding: 50px 20px; 
+    align-items:  center; 
+    background-color: #FF9377; 
 }
 
-/* Ensure flexibility and wrap if necessary */
 .popular-courses {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: flex-start; /* Align items from left to right */
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
 }
 
 /* Style for individual course */
 .course {
-    flex: 0 0 auto; /* Maintain initial width */
+    flex: 0 0 auto; 
     width: calc(33.33% - 20px); 
-    margin-right: 20px; /* Add margin between items */
-    padding: 15px; /* Add padding for better spacing */
-    border: 1px solid #ccc; /* Add border for visual separation */
-    border-radius: 5px; /* Add rounded corners for better appearance */
-    background-color: #f9f9f9; /* Add background color */
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+    margin-right: 20px; 
+    padding: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+    box-sizing: border-box; 
 }
 
-/* Additional styles for course details */
 .course h3 {
-    margin-top: 0; /* Remove top margin for course title */
+    margin-top: 0; 
 }
 
 .course p {
-    margin-bottom: 0; /* Remove bottom margin for course description */
+    margin-bottom: 0;
 }
 
 .course a {
-    display: inline-block; /* Ensure link behaves as a block element */
+    display: inline-block; 
 }
-
 /*end of Section 2*/
 
 /* Top Tutors Section */
@@ -163,19 +158,18 @@ nav ul li a:hover {
 }
 
 .tutor-list {
-    display: flex; /* Use flexbox to create horizontal layout */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    display: flex; 
+    flex-wrap: nowrap; 
     overflow-x: auto;
     padding: 20px 0;
 }
 
 .tutor {
-    flex: 0 0 auto; /* Maintain initial width */
-    width: calc(33.33% - 20px); /* Adjust width as needed */
-    margin-right: 20px; /* Add margin between tutor items */
-    /* Add styling for individual tutor items */
+    flex: 0 0 auto;
+    width: calc(33.33% - 20px); 
+    margin-right: 20px; 
 }
-/*End of Section3*/
+/*End of Section 3*/
 
 /* Footer Section */
 footer {
@@ -184,7 +178,6 @@ footer {
     padding: 20px;
     text-align: center;
 }
-
 .contact-info a {
     color: antiquewhite;
     text-decoration: none;
@@ -204,6 +197,7 @@ footer {
     color: antiquewhite;
     text-decoration: none;
 }
+/*End of Footer*/
 
 #brandname{
     color: antiquewhite;
@@ -215,7 +209,6 @@ footer {
 }
 
 /* Tutors Page */
-
 .search_section{
     position: fixed;
     width: 100%;
@@ -255,6 +248,7 @@ footer {
     padding-top: 5%;
 }
 
+/*Post Page*/
 .posts{
     background-color: #f0f0f0;
     width: 60%;
@@ -280,7 +274,6 @@ footer {
     text-decoration: none;
     color: #111;
 }
-
 
 .course_section{
     min-height: 100vh;
@@ -352,11 +345,6 @@ footer {
     background-color: rgb(221, 197, 166);
 }
 
-
-
-
-
-
 .mainbody{
     background-color: #ccc;
     margin-top: 10%;
@@ -390,6 +378,7 @@ footer {
     width: 50%;
 }
 
+/*Course Page*/
 .coursepage-mb{
     background-color: #dcdcdc83;
     margin-inline:auto;
