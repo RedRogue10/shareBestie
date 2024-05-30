@@ -1,6 +1,7 @@
 <?php
     include 'dbConnect.php';
 
+    //table stores courses, identified by CourseID
     $sql = "CREATE TABLE course(
         CourseID VARCHAR(10),
         Description TEXT,
@@ -8,6 +9,8 @@
     )";
     $conn->query($sql);
 
+    //table stores user information. 
+    //UserID is the primary key and automatically increments
     $sql = "CREATE TABLE user(
         UserID INT AUTO_INCREMENT,
         Username VARCHAR(16) NOT NULL,
@@ -20,6 +23,7 @@
     )";
     $conn->query($sql);
 
+    //table stores posts with an auto-incrementing PostID
     $sql = "CREATE TABLE post(
         PostID INT AUTO_INCREMENT,
         Title TEXT,
@@ -27,8 +31,9 @@
         Content TEXT,
         PRIMARY KEY (PostID)
     )";
-    $conn->query($sql);   
+    $conn->query($sql); 
 
+    //table stores comments with an auto-incrementing CommentID
     $sql = "CREATE TABLE comment(
         CommentID INT AUTO_INCREMENT,
         Content TEXT,
@@ -37,6 +42,7 @@
     )";
     $conn->query($sql);
 
+    //table stores prerequisite relationships between courses
     $sql = "CREATE TABLE prereq(
         CourseID VARCHAR(10),
         PreReqID VARCHAR(10),
@@ -46,8 +52,7 @@
     )";
     $conn->query($sql); 
 
-
-
+    //table links tutors to users
     $sql = "CREATE TABLE tutors(
         TutorID INT,
         UserID INT,
@@ -57,8 +62,7 @@
     )";
     $conn->query($sql);
 
-
-
+    //table associates posts with courses
     $sql = "CREATE TABLE postUnder(
         PostID INT,
         CourseID VARCHAR(10),
@@ -68,6 +72,7 @@
     )";
     $conn->query($sql);
 
+    //table links posts to users
     $sql = "CREATE TABLE posts(
         PostID INT,
         UserID INT,
@@ -75,6 +80,8 @@
         FOREIGN KEY (UserID) REFERENCES user(UserID),
         PRIMARY KEY (PostID, UserID)
     )";
+
+    //table associates comments with posts
     $conn->query($sql);
     $sql = "CREATE TABLE commentUnder(
         CommentID INT,
@@ -86,7 +93,7 @@
 
     $conn->query($sql);
 
-
+    //table links comments to users
     $sql = "CREATE TABLE comments(
         CommentID INT,
         UserID INT,
@@ -94,8 +101,8 @@
         FOREIGN KEY (UserID) REFERENCES user(UserID),
         PRIMARY KEY (CommentID, UserID)
     )";
-    $conn->query($sql);
 
+    //tablet to link courses to tutors
     $sql = "CREATE TABLE teaches(
         TutorID INT,
         CourseID INT,
@@ -104,4 +111,6 @@
         PRIMARY KEY (TutorID, CourseID)
     )";
     $conn->query($sql);
+
     $conn->close();
+?>
