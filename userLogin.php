@@ -6,6 +6,7 @@
    }
 ?>
 <?php
+   /*Source Code for userLogin.php*/
     include 'dbConnect.php';
     if(isset($_REQUEST['loginMessage'])){
         $msg=$_REQUEST['loginMessage'];
@@ -89,7 +90,6 @@
                 <tr>
                     <td>
                     <button class="btn btn-primary" id="signup" type="submit" name="Login">Log in</button>
-                        <!-- <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in"> -->
                     </td>
                 </tr>
                 <tr>
