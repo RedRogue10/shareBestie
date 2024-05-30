@@ -41,23 +41,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="SigninCSS.css">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
 
     <title>Post</title>
 </head>
 <body>
-    <!--Navigation Menu-->
-    <div class="navbar-header">
-        <ul>
-            <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
+    <!--Header Section-->
+    <header>
+        <div class="logo">
+            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
             <a href="home.php" id="brandname">ShareBestie</a>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="tutors.php">Tutors</a></li>
-            <li><a href="about.php">About Us</a></li>  
-        </ul>
-    </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="courseSearch.php">Courses</a></li>
+                <li><a href="tutors.php">Tutors</a></li>
+                <li><a href="about.php">About Us</a></li>
+            </ul>
+        </nav>
+         <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
+        <?php 
+            if(isset($_SESSION['userID'])){
+                echo '<div class="user-auth">
+                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
+                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
+                    </div>';
+            }else{
+                echo '<div class="user-auth">
+                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
+                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
+              </div>';
+            }
+        ?>
+    </header>
 
     <div class="signupform">
         <h1 id="tableHeader">New Post</h1>
