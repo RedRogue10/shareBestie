@@ -1,4 +1,4 @@
-home.php
+<!--Source Code for home.php-->
 <?php 
     session_start();
 ?>
@@ -12,6 +12,8 @@ home.php
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
+
+
 </head>
 <body>
 
@@ -32,19 +34,13 @@ home.php
         <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
         <?php 
             if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <!--Account Button -->
+                echo '<div class="user-auth"
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Logout Button-->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
                 echo '<div class="user-auth">
-                        <!--Login Form -->
                         <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
               </div>';
             }
@@ -120,9 +116,9 @@ home.php
     <footer>
         <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebok</a></p>
         </div>
-        <!--Footer Links-->
+        <!-- Footer Links -->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
