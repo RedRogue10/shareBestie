@@ -1,5 +1,6 @@
+<!--Source Code for CourseSearch.php-->
 <?php 
-    session_start();
+    session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,42 +14,40 @@
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
 </head>
 <body>
+    <!--Header Section-->
     <header>
         <div class="logo">
             <img src="ShareBestie_Logo.png" alt="Your Website Logo">
             <a href="home.php" id="brandname">ShareBestie</a>
         </div>
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
-
                 <li><a href="about.php">About Us</a></li>
             </ul>
         </nav>
+         <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
         <?php 
             if(isset($_SESSION['userID'])){
                 echo '<div class="user-auth">
-                        <!--Login Form -->
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Logout -->
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
             }else{
                 echo '<div class="user-auth">
-                        <!--Login Form -->
                         <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
+                    </div>';
             }
         ?>
     </header>
 
+    <!--Course Section -->
     <section id="course_section" class="course_section">
+        <!--Search Bar-->
         <div class="search_section">
             <form name="searchBar" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
                 <input type="text" size="30" id="searchBox" name="search">
@@ -56,6 +55,7 @@
                 <div id="searchResults" class="searchResults"></div>
             </form>
         </div>
+        <!-- Search Results Cards -->
         <div id="searchCards">
             <?php
                 include 'dbConnect.php';
@@ -79,10 +79,13 @@
         </div>
     </section>
 
+    <!--Footer Section-->
     <footer>
+        <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
+        <!--Footer Links-->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -92,12 +95,15 @@
         </div>
     </footer>
 
+    <!--Query Library-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
+        //function to fill the search box with selected value
         function fill(value){
-    $('#searchBox').val(value);
-    $('#searchResults').hide();
-}
+            $('#searchBox').val(value);
+            $('#searchResults').hide();
+        }
+        //jQuery function to perform AJAX search
         $(document).ready(function(){
             $("#searchBox").keyup(function(){
                 var name = $('#searchBox').val();
