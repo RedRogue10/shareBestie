@@ -101,6 +101,7 @@
         FOREIGN KEY (UserID) REFERENCES user(UserID),
         PRIMARY KEY (CommentID, UserID)
     )";
+    $conn->query($sql);
 
     //tablet to link courses to tutors
     $sql = "CREATE TABLE teaches(
