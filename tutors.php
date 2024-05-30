@@ -7,7 +7,7 @@
     <!--Source Code for tutors.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>Tutors - shareBestie</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -21,18 +21,19 @@
             <img src="ShareBestie_Logo.png" alt="Your Website Logo">
             <a href="home.php" id="brandname">ShareBestie</a>
         </div>
+        <!--Navigation Menu-->
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="courseSearch.php">Courses</a></li>
                 <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="about.php ">About Us</a></li>
+                <li><a href="about.php">About Us</a></li>
             </ul>
         </nav>
-        <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
+         <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
         <?php 
             if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth"
+                echo '<div class="user-auth">
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
@@ -40,7 +41,7 @@
                 echo '<div class="user-auth">
                         <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
+                    </div>';
             }
         ?>
     </header>
