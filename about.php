@@ -80,7 +80,7 @@
    <footer>
         <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
         </div>
         <!--Footer Links-->
         <div class="footer-links">
