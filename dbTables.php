@@ -106,7 +106,7 @@
     //tablet to link courses to tutors
     $sql = "CREATE TABLE teaches(
         TutorID INT,
-        CourseID INT,
+        CourseID VARCHAR(10),
         FOREIGN KEY (TutorID) REFERENCES user(UserID),
         FOREIGN KEY (CourseID) REFERENCES course(CourseID),
         PRIMARY KEY (TutorID, CourseID)
