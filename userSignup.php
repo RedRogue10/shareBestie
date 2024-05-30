@@ -55,7 +55,7 @@
             <a href="home.php" id="brandname">ShareBestie</a>
             <li><a href="courseSearch.php">Courses</a></li>
             <li><a href="tutors.php">Tutors</a></li>
-             <li><a href="about.php">About</a></li>
+             <li><a href="about.php">About Us</a></li>
         </ul>
     </div>
 
