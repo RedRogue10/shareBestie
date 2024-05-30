@@ -32,7 +32,7 @@
         <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
         <?php 
             if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth"
+                echo '<div class="user-auth">
                         <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
                         <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
                     </div>';
@@ -40,7 +40,7 @@
                 echo '<div class="user-auth">
                         <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
                         <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
+                    </div>';
             }
         ?>
     </header>
