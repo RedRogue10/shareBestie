@@ -1,5 +1,4 @@
-<?php
-    /*Source Code for tutorSet.php*/
+o<?php
     include 'dbConnect.php';
 
     $email = $_POST['email'];

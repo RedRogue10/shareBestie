@@ -24,55 +24,29 @@
 
 </head>
 <body>
-<!--Header Section-->
-    <header>
-        <div class="logo">
-            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="home.php" id="brandname">ShareBestie</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="courseSearch.php">Courses</a></li>
-                <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="about.php ">About Us</a></li>
-            </ul>
-        </nav>
-        <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth"
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        ?>
-    </header>
-    
-   <!--Account Display-->
+
+    <!-- Header Section -->
+    <?php include 'header.php'?>
+
+   <!-- Account Display -->
     <section id="section1" class="section section2">
-        <div class="welcome-content-user">
+        <div class="welcome-content course">
             <h1>Welcome to <br><strong>shareBestie!</strong></h1>
-        </div>
-        <div class="accountdetails">
+        
+        <div>
             <h1>Account</h1>
             <div>Username:  <?php echo $username?></div>
             <div>First Name: <?php echo $firstname?></div>
             <div>Last Name: <?php echo $lastname?></div>
             <div>Email: <?php echo $email?></div>
-        </div>
+        </div></div>
     </section>
 
     <!--Footer Sectio -->
     <footer>
         <!--Contact Informatio -->
         <div class="contact-info">
-            <p>Contact Us: www.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
         <!--Footer Links-->
         <div class="footer-links">

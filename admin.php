@@ -19,39 +19,11 @@
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
 </head>
 <body>
-    <!--Header Section-->
-    <header>
-        <div class="logo">
-            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="home.php" id="brandname">ShareBestie</a>
-        </div>
-        <nav>
-            <ul>
-                <!--Navigation Menu-->
-                <li><a href="home.php">Home</a></li>
-                <li><a href="courseSearch.php">Courses</a></li>
-                <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="about.php">About Us</a></li>
-            </ul>
-        </nav>
-        <!--Log In and Sign Up for Logged In and Nonlogged In Users-->
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        ?>
-    </header>
-    <section class="course_section">
-        <div>
-            <!--Set a tutor for courses-->
+    <!-- Header Section -->
+    <?php include 'header.php'?>
+    <section class="section1 course_section">
+        <div class="">
+            <h1 class="header">Add A Tutor</h1>
             <form action="tutorSet.php" method="POST">
                 <!--Select a tutor-->
                 <select class="expand" name="userID" >
@@ -90,14 +62,13 @@
         </div>
     </section>
 
-    
-    <!--Footer Section-->
+    <!-- Footer Section -->
     <footer>
-        <!--Contact Information-->
+        <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: www.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
-         <!--Footer Links-->
+        <!-- Footer Links -->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -107,27 +78,5 @@
         </div>
     </footer>
 
-    <!--jQuery library for AJAX -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#searchBox").keyup(function(){
-                var name = $('#searchBox').val();
-                if (name == "") {
-                    $('#searchResults').html("");
-                } else {
-                    $.ajax({
-                        type: "POST", 
-                        url: "courseSearchResults.php", 
-                        data: { search: name },
-                        success: function(html){
-                            console.log("test 5");
-                            $('#searchResults').html(html).show();
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
