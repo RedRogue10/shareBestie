@@ -50,7 +50,16 @@
 </head>
 <body>
     <!-- Header Section -->
-    <?php include 'header.php'?>
+    <div class="navbar-header">
+        <ul>
+            <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
+            <a href="home.php" id="brandname">ShareBestie</a>
+            <li><a href="courseSearch.php">Courses</a></li>
+            <li><a href="tutors.php">Tutors</a></li>
+             <li><a href="about.php">About Us</a></li>
+        </ul>
+    </div>
+
 
     <div class="signupform">
         <h1 id="tableHeader">New Post</h1>
