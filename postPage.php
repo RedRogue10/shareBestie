@@ -31,39 +31,7 @@
 <body>
 
     <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="home.php" id="brandname">ShareBestie</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="courseSearch.php">Courses</a></li>
-                <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="/about">About Us</a></li>
-            </ul>
-        </nav>
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Signup Form -->
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        ?>
-    </header>
+    <?php include 'header.php'?>
 
     <!-- Main Body -->
     <section id="postpage" class="section section1">
@@ -103,9 +71,11 @@
 
     <!-- Footer Section -->
     <footer>
+        <!-- Contact Information -->
         <div class="contact-info">
-            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
+        <!-- Footer Links -->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>

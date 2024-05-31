@@ -1,4 +1,4 @@
-<?php
+o<?php
     include 'dbConnect.php';
     $email = $_POST['email'];
     $sql = "SELECT * FROM user WHERE Email = '$email'";

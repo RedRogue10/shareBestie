@@ -34,15 +34,8 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="navbar-header">
-        <ul>
-            <img src="ShareBestie_Logo.png" alt="LOGO" style=" padding:0%; height:50px; width:50px; object-fit:cover;">
-            <a href="home.php" id="brandname">ShareBestie</a>
-            <li><a href="">Careers</a></li>
-            <li><a href="">Courses</a></li>
-            <li><a href="">Tutors</a></li>
-        </ul>
-    </div>
+    <!-- Header Section -->
+    <?php include 'header.php'?>
 
     <div class="signupform">
     <h1 id="tableHeader">New Post</h1>

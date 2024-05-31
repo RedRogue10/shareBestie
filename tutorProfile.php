@@ -25,56 +25,20 @@
 <body>
 
     <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="home.php" id="brandname">ShareBestie</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="courseSearch.php">Courses</a></li>
-                <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="/about">About Us</a></li>
-               <!--  <li><a href="/login">Login</a></li>
-                <li><a href="signup">Sign up</a></li> -->
-            </ul>
-        </nav>
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href=""><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Logout -->
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        
-        
-        ?>
-    </header>
-
+    <!-- Header Section -->
+    <?php include 'header.php'?>
    <!-- Account Display -->
     <section id="section1" class="section section2">
-        <div class="welcome-content">
+        <div class="welcome-content course">
             <h1>Welcome to <br><strong>TUTOR PAGE</strong></h1>
-        </div>
+        
         <div>
             <div>Username:  <?php echo $username?></div>
             <div>First Name: <?php echo $firstname?></div>
             <div>Last Name: <?php echo $lastname?></div>
             <div>Email: <?php echo $email?></div>
-        </div>
-        <div class="signupform" style="text-align:center">
+        </div></div>
+        <div class="signupform course" style="text-align:center">
             <h1 id="tableheader">Teaches</h1>
             <?php 
                 $sql = "SELECT * FROM teaches WHERE TutorID ='$tutorID'";

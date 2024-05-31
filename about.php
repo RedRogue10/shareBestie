@@ -17,41 +17,7 @@
 <body>
 
     <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="ShareBestie_Logo.png" alt="Your Website Logo">
-            <a href="home.php" id="brandname">ShareBestie</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="courseSearch.php">Courses</a></li>
-                <li><a href="tutors.php">Tutors</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </nav>
-        <!-- Log In and Sign Up for Logged In and Nonlogged In Users -->
-        <?php 
-            if(isset($_SESSION['userID'])){
-                echo '<div class="user-auth">
-                        <!--Account Button -->
-                        <a href="userAccount.php"><button class="btn btn-primary" id="account" type="submit" >Account</button></a>
-      
-                        <!--Logout Button-->
-                        <a href="userLogout.php"><button class="btn btn-primary" id="logout" type="submit">Log Out</button></a> 
-                    </div>';
-            }else{
-                echo '<div class="user-auth">
-                        <!--Login Form -->
-                        <a href="userLogin.php"><button class="btn btn-primary" id="login" type="submit" >Log in</button></a>
-      
-                        <!--Signup Form -->
-                        <a href="userSignup.php"><button class="btn btn-primary" id="signup" type="submit" >Sign Up</button></a>
-              </div>';
-            }
-        ?>
-    </header>
-
+    <?php include 'header.php'?>
     <!-- Main Content Section -->
     <section id="about-us" class="sectio1n section1">
         <div class="container" style="background-color:rgba(255,255,255,0.5)">
