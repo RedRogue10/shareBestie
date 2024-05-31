@@ -1,7 +1,7 @@
 <?php 
     session_start();
+    // Check if the user is an admin. If not, redirect to home.php
     if(isset($_SESSION['admin'])){
-
     }else{
         header("Location:home.php");
     }
@@ -9,9 +9,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for tutorAdd.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>Tutors</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -24,36 +25,38 @@
         <div class="">
             <h1 class="header">Add A Tutor</h1>
             <form action="tutorSet.php" method="POST">
+                <!--Select a tutor-->
                 <select class="expand" name="userID" >
-                <option value="" disabled="">----Select Tutor's Courses-----</option>
-                <?php 
-                    include 'dbConnect.php';
-                    $sql = "SELECT * FROM user";
-                    $result = $conn->query($sql);
+                    <option value="" disabled>----Select Tutor's Courses-----</option>
+                    <?php 
+                        include 'dbConnect.php'; 
+                        $sql = "SELECT * FROM user"; // SQL query to get all users
+                        $result = $conn->query($sql);
 
-                    if($result -> num_rows > 0 ){
-                        while($row = $result->fetch_assoc()){
-                            echo "<option value='".$row['UserID']."'>".$row['Username']."</option>";
+                        if($result -> num_rows > 0 ){
+                            // Loop through each user and create an option in the dropdown
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='".$row['UserID']."'>".$row['Username']."</option>";
+                            }
                         }
-                    }
-                
-                ?>
+                    ?>
                 </select>
+                <!--Select multiple courses for the tutor-->
                 <select class="expand" name="courses[]" multiple>
-                <option value="" disabled="">----Select Tutor's Courses-----</option>
-                <?php 
-                    include 'dbConnect.php';
-                    $sql = "SELECT * FROM course";
-                    $result = $conn->query($sql);
+                    <option value="" disabled>----Select Tutor's Courses-----</option>
+                    <?php 
+                        include 'dbConnect.php'; 
+                        $sql = "SELECT * FROM course"; //SQL query to get all courses
+                        $result = $conn->query($sql);
 
-                    if($result -> num_rows > 0 ){
-                        while($row = $result->fetch_assoc()){
-                            echo "<option value='".$row['CourseID']."'>".$row['CourseID']."</option>";
+                        if($result -> num_rows > 0 ){
+                            while($row = $result->fetch_assoc()){
+                                echo "<option value='".$row['CourseID']."'>".$row['CourseID']."</option>";
+                            }
                         }
-                    }
-                
-                ?>
+                    ?>
                 </select>
+                <!--Submit the form -->
                 <button name="addTutor" type="submit">Set As Tutor</button>
             </form>
         </div>

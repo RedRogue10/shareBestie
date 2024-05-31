@@ -6,6 +6,7 @@
    }
 ?>
 <?php
+   /*Source Code for userLogin.php*/
     include 'dbConnect.php';
     if(isset($_REQUEST['loginMessage'])){
         $msg=$_REQUEST['loginMessage'];
@@ -62,6 +63,7 @@
             <a href="home.php" id="brandname">ShareBestie</a>
             <li><a href="courseSearch.php">Courses</a></li>
             <li><a href="tutors.php">Tutors</a></li>
+           <li><a href="tutors.php">About Us</a></li>
         </ul>
     </div>
 
@@ -89,7 +91,6 @@
                 <tr>
                     <td>
                     <button class="btn btn-primary" id="signup" type="submit" name="Login">Log in</button>
-                        <!-- <input class="btn btn-primary" id="signup" type="submit" name="Login" value="Log in"> -->
                     </td>
                 </tr>
                 <tr>

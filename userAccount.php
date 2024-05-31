@@ -12,9 +12,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for userAccount.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>User Account Page</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -41,13 +42,13 @@
         </div></div>
     </section>
 
-    <!-- Footer Section -->
+    <!--Footer Sectio -->
     <footer>
-        <!-- Contact Information -->
+        <!--Contact Informatio -->
         <div class="contact-info">
             <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
         </div>
-        <!-- Footer Links -->
+        <!--Footer Links-->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>

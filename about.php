@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for about.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>About Us - shareBestie</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
-
-
 </head>
 <body>
 
@@ -20,7 +19,7 @@
     <?php include 'header.php'?>
     <!-- Main Content Section -->
     <section id="about-us" class="sectio1n section1">
-        <div class="container" style="background-color:rgba(255,255,255,0.5)">
+        <div class="aboutus" style="background-color:rgba(255,255,255,0.5)">
             <h1>About Us</h1>
             <p>Welcome to shareBestie, your one-stop platform for collaborative learning and knowledge sharing among students!</p>
             
@@ -33,29 +32,29 @@
             <h2>Our Team</h2>
             <p>Meet the passionate team behind shareBestie:</p>
             <ul>
-                <li>Aguirre</li>
-                <li>Dicar</li>
-                <li>Vincoy</li>
+                <li>Agent Aguirre</li>
+                <li>Agent Dicar</li>
+                <li>Agent Vincoy</li>
             </ul>
             
             <h2>Contact Us</h2>
             <p>If you have any questions, feedback, or inquiries, feel free to contact us:</p>
             <ul>
-                <li>Email: info@sharebestie.com</li>
+                <li>Email: www.DVA@sharebestie.com</li>
                 <li>Phone: +1234567890</li>
-                <li>Address: 123 Main Street, City, Country</li>
+                <li>Address: Miagao, Iloilo, Philippines</li>
             </ul>
         </div>
     </section>
 
     
-   <!-- Footer Section -->
+   <!--Footer Section-->
    <footer>
-        <!-- Contact Information -->
+        <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
         </div>
-        <!-- Footer Links -->
+        <!--Footer Links-->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>

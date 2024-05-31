@@ -1,15 +1,14 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     include 'dbConnect.php';
     if(isset($_GET['postID'])){
         $postID = $_GET['postID'];
     }
-    // Query post information
+    //Query post information
     $sql = "SELECT * FROM post WHERE postID = '$postID'";
     $postRow = $conn->query($sql)->fetch_assoc();
     
-    // Query comments under post
+    //Query comments under post
     $sql = "SELECT * FROM commentUnder NATURAL JOIN comment WHERE PostID = '$postID'";
     $commentsUnder = $conn->query($sql);
 
@@ -18,22 +17,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for postPage.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>Post</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
-
-
 </head>
 <body>
 
     <!-- Header Section -->
     <?php include 'header.php'?>
 
-    <!-- Main Body -->
+    <!--Main Body-->
     <section id="postpage" class="section section1">
         <div class="mainbody">
             <h2><?php echo $postRow['Title']?></h2>
@@ -41,13 +39,13 @@
             <?php 
             if(isset($_SESSION['userID'])){
                 echo '<form name="commenting" method="POST" action="commentAdd.php">'.
-                '<textarea style="resize:none;height:100px;width: 300px;" name="content"></textarea>'.
+                '<textarea name="content"></textarea>'.
                 '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
                 '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
                 }
             ?>
         </div>
-        <!-- Comment Section -->
+        <!--Comment Section-->
         <div class="comments">
                 <?php
                     if ($commentsUnder->num_rows > 0){
@@ -69,7 +67,7 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!--Footer Section-->
     <footer>
         <!-- Contact Information -->
         <div class="contact-info">

@@ -1,29 +1,43 @@
 <?php
-
    session_start();
+   
    include 'dbConnect.php';
+   
    $courseID = $_REQUEST['courseID'];
+   
+   //handling the submission to create a new post
    if(isset($_REQUEST['submitPost'])){
-    $userID = $_SESSION['userID'];
-    $date = date ('Y-m-d H:i:s', time());
-    $title = $_POST['title'];
-    $content  = $_POST['content'];
-    $sql = "INSERT INTO post (Title, Content, PostDate) VALUES('$title','$content','$date')";
-    $conn->query($sql);
-    $postID = mysqli_insert_id($conn);
-    $sql = "INSERT INTO posts (UserID,PostID) VALUES ('$userID','$postID')";
-    $conn->query($sql);
-    $sql = "INSERT INTO postUnder (PostID, CourseID) VALUES ('$postID','$courseID')";
-    $conn->query($sql);
-    header("Location:postPage.php?postID=$postID");
+       $userID = $_SESSION['userID'];
+       
+       $date = date ('Y-m-d H:i:s', time());
+       
+       //retrieving title and content of the post from the form data
+       $title = $_POST['title'];
+       $content  = $_POST['content'];
+       
+       //inserting the new post into the 'post' table
+       $sql = "INSERT INTO post (Title, Content, PostDate) VALUES('$title','$content','$date')";
+       $conn->query($sql);
+       
+       //retrieving the ID of the newly inserted post
+       $postID = mysqli_insert_id($conn);
+       
+       //inserting the relationship into the 'posts' table
+       $sql = "INSERT INTO posts (UserID,PostID) VALUES ('$userID','$postID')";
+       $conn->query($sql);
+       
+       //inserting the relationship into the 'postUnder' table
+       $sql = "INSERT INTO postUnder (PostID, CourseID) VALUES ('$postID','$courseID')";
+       $conn->query($sql);
+       
+       //redirecting
+       header("Location:postPage.php?postID=$postID");
    }
-   
-   
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <!--Source Code for postAdd.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -32,24 +46,28 @@
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
 
     <title>Login</title>
+    <title>Post</title>
 </head>
 <body>
     <!-- Header Section -->
     <?php include 'header.php'?>
 
     <div class="signupform">
-    <h1 id="tableHeader">New Post</h1>
+        <h1 id="tableHeader">New Post</h1>
         <div class="addpost">
+            <!--Form for adding a new post-->
             <form action='<?php echo $_SERVER["PHP_SELF"]?>' method ="POST">
                 <input type="hidden" name="courseID" value ="<?php echo $courseID?>">    
                 <table>
                     <tr>
                         <td>
+                            <!--Input field for post title-->
                             <input type="text" name="title" placeholder="Post Title">
                         </td>
                     </tr>
                     <tr>
                         <td>
+                            <!--Textarea for post content-->
                             <textarea name="content" id="description" placeholder="Write your post here."></textarea>
                         </td>
                     </tr>
@@ -62,8 +80,5 @@
             </form>
         </div>
     </div>
-    
 </body>
 </html>
-
-

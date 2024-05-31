@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code for home.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - shareBestie</title>
@@ -11,8 +12,6 @@
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
-
-
 </head>
 <body>
 
@@ -21,7 +20,7 @@
     <!-- Welcome Section -->
     <section id="section1" class="section section1">
         <div class="welcome-content" >
-            <h1 style="background-color:rgba(255,255,255,0.8); padding:5px;">Welcome to <br><strong>shareBestie!</strong></h1>
+            <h1 style="background-color:rgba(255,255,255,0.8);">Welcome to <br><strong>shareBestie!</strong></h1>
             <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
         </div>
         <div class="introduction " style="background-color:rgba(255,255,255,0.4); padding:10px;">
@@ -29,12 +28,12 @@
         </div>
     </section>
 
-    <!-- Popular Courses Section -->
+    <!--Popular Courses Section-->
     <section id="section2" class="section section2">
         <h2>Popular Courses</h2>
         <p>Check out different courses now!</p>
         <div class="popular-courses">
-            <!-- List of Popular Course with Posts ATM -->
+            <!--List of Popular Course with Posts ATM-->
             <div class="course">
                 <h3>CMSC 11 - Introduction to Python Programming</h3>
                 <p>This course covers the fundamentals of computer science using the Python programming language.</p>
@@ -51,7 +50,7 @@
                 <a href="coursePage.php?id=CMSC 56" class="btn btn-primary">View Posts</a>
             </div>
         </div>
-        <!-- Top Posts Section -->
+        <!--Top Posts Section-->
         <h2>Top Posts</h2>
        <p>View top posts in shareBestie at the moment!</p>
         <div class="popular-courses">
@@ -73,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Top Tutors Section -->
+    <!--Top Tutors Section-->
     <section id="section3" class="section section3">
         <h2>Top Tutors</h2>
         <div class="course">
@@ -83,11 +82,11 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!--Footer Section-->
     <footer>
-        <!-- Contact Information -->
+        <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebok</a></p>
         </div>
         <!-- Footer Links -->
         <div class="footer-links">
@@ -101,4 +100,3 @@
 
 </body>
 </html>
-

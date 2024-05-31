@@ -4,9 +4,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <!--Source Code for tutors.php-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>Tutors - shareBestie</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -36,9 +37,11 @@
 
                 switch($req){
                     case 'Search':
+                        //retrieve search query
                         $name = $_POST['search'];
                         $sql = "SELECT DISTINCT Username,UserID FROM teaches, user WHERE (CourseID LIKE '%$name%' AND user.UserID = teaches.TutorID)";
                         $result = $conn->query($sql);
+                        //display search results
                         if($result->num_rows == 0){
                             echo "<h2 style='text-align:center'>No Tutors Found</h2>";
                         }else{
@@ -62,10 +65,13 @@
             ?>
     </div>
     </section>
+    <!--Footer Section-->
     <footer>
+        <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: insert email here | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
         </div>
+        <!--Footer Links-->
         <div class="footer-links">
             <ul>
                 <li><a href="/terms">Terms of Service</a></li>
@@ -75,12 +81,14 @@
         </div>
     </footer>
 
+    <!--JS for Search-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
         function fill(value){
     $('#searchBox').val(value);
     $('#searchResults').hide();
 }
+        //jQuery for AJAX search functionality
         $(document).ready(function(){
             $("#searchBox").keyup(function(){
                 var name = $('#searchBox').val();

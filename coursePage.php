@@ -1,31 +1,28 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     include 'dbConnect.php';
     $courseID = $_GET['id'];
 
-    // Query course information
+    //Query course information
     $sql = "SELECT * FROM course WHERE CourseId = '$courseID'";
     $courseRow = $conn->query($sql)->fetch_assoc();
     
-    // Query Posts Under Course
+    //Query Posts Under Course
     $sql = "SELECT * FROM postUnder NATURAL JOIN post WHERE CourseID = '$courseID'";
     $postsUnder = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--Source Code coursePage.php-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - shareBestie</title>
+    <title>Courses - shareBestie</title>
     
     <link rel="stylesheet" href="styles.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="ShareBestie_Logo.png">
-
-
 </head>
 <body>
 
@@ -39,7 +36,7 @@
             </div>
             <?php
             if(isset($_SESSION['userID'])){
-                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
+                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="addpost" type="submit" name="addPost">Add Post</button></a>';
             }
             ?>
                     <?php
@@ -50,16 +47,15 @@
                                     "<p>".$row['Content']."</p>".
                                     "<p>".$row['PostDate']."</p>".
                                 "</a></div>";
-                            }}
-            
+                            }}   
             ?>
         </section>
 
-    <!-- Footer Section -->
+    <!--Footer Section-->
     <footer>
-        <!-- Contact Information -->
+        <!--Contact Information-->
         <div class="contact-info">
-            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Social Media</a></p>
+            <p>Contact Us: wwww.DVA@shareBestie.com | Follow Us: <a href="#">Facebook</a></p>
         </div>
         <!-- Footer Links -->
         <div class="footer-links">
