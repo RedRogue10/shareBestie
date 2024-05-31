@@ -56,10 +56,10 @@
     
    <!--Account Display-->
     <section id="section1" class="section section2">
-        <div class="welcome-content">
+        <div class="welcome-content-user">
             <h1>Welcome to <br><strong>shareBestie!</strong></h1>
         </div>
-        <div>
+        <div class="accountdetails">
             <h1>Account</h1>
             <div>Username:  <?php echo $username?></div>
             <div>First Name: <?php echo $firstname?></div>

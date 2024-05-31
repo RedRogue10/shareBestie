@@ -48,7 +48,7 @@
    <!--Welcome Section-->
     <section id="section1" class="section section1">
         <div class="welcome-content" >
-            <h1 style="background-color:rgba(255,255,255,0.8); padding:5px;">Welcome to <br><strong>shareBestie!</strong></h1>
+            <h1 style="background-color:rgba(255,255,255,0.8);">Welcome to <br><strong>shareBestie!</strong></h1>
             <p>Your one-stop platform for collaborative learning and knowledge sharing among students!</p>
         </div>
         <div class="introduction " style="background-color:rgba(255,255,255,0.4); padding:10px;">

@@ -66,7 +66,7 @@
             <?php 
             if(isset($_SESSION['userID'])){
                 echo '<form name="commenting" method="POST" action="commentAdd.php">'.
-                '<textarea style="resize:none;height:100px;width: 300px;" name="content"></textarea>'.
+                '<textarea name="content"></textarea>'.
                 '<button class="btn btn-primary" type="submit" name="comment">Comment</button>'.
                 '<input type="hidden" value="'.$postRow['PostID'].'" name="PostID"></form>';
                 }

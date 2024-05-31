@@ -64,7 +64,7 @@
             </div>
             <?php
             if(isset($_SESSION['userID'])){
-                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="signup" type="submit" name="addPost">Add Post</button></a>';
+                echo '<a href="postAdd.php?courseID='.$courseRow["CourseID"].'"><button class="btn btn-primary" id="addpost" type="submit" name="addPost">Add Post</button></a>';
             }
             ?>
                     <?php

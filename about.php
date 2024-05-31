@@ -47,7 +47,7 @@
 
     <!--Main Content-->
     <section id="about-us" class="sectio1n section1">
-        <div class="container" style="background-color:rgba(255,255,255,0.5)">
+        <div class="aboutus" style="background-color:rgba(255,255,255,0.5)">
             <h1>About Us</h1>
             <p>Welcome to shareBestie, your one-stop platform for collaborative learning and knowledge sharing among students!</p>
             
